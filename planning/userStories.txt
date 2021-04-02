@@ -1,0 +1,11 @@
+as a user I can ____ because ______ and _____ happens
+-------------------------------------------
+
+I'm a user and I can create a quiz
+I'm a user and I can share my quiz
+I'm not a user and I can open the quiz and do it
+I'm not a user and I can see the results of the quiz I just did
+I'm a user and I can see a list of public quizzes
+	-on the homepage
+I'm a user and I can see how my friends did
+I'm a user and I can share a link of the results
