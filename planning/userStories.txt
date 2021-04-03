@@ -1,12 +1,21 @@
-as a user I can ____ because ______ and _____ happens
+As a user I can ____ because ______ and _____ happens
 -------------------------------------------
 
 I'm a user and I can create a quiz
-	-make it private
 I'm a user and I can share my quiz
 I'm not a user and I can open the quiz and do it
 I'm not a user and I can see the results of the quiz I just did
 I'm a user and I can see a list of public quizzes
 	-on the homepage
 I'm a user and I can see how my friends did
-I'm a user and I can share a link of the results
+I'm a user and I can share a link of the results of quiz
+
+Mentor Notes--
+I'm a user and "I need a form and button" I can create a quiz and a form appears
+I'm a user and "I need a button" I can share my quiz
+I'm not a user and I can open the quiz and do it
+I'm not a user and I can see the results of the quiz I just did
+I'm a user and I can see a list of public quizzes
+	-on the homepage
+I'm a user and "I need a..." I can see how my friends did
+I'm a user and I can share a link of the results of quiz
