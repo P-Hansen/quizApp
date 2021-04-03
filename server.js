@@ -13,7 +13,6 @@ const morgan     = require('morgan');
 const profileRouter = require('./routes/profileRouter');
 const quizRouter = require('./routes/quizRouter');
 const resultsRouter = require('./routes/resultsRouter');
-const trophyRouter = require('./routes/trophyRouter');
 
 
 // PG database client/connection setup
@@ -46,12 +45,10 @@ const widgetsRoutes = require("./routes/widgets");
 // Note: Feel free to replace the example routes below with your own
 app.use("/api/users", usersRoutes(db));
 app.use("/api/widgets", widgetsRoutes(db));
-// Note: mount other resources here, using the same pattern above
 
 app.use('/quiz', quizRouter);
 app.use('/profile', profileRouter);
 app.use('/results', resultsRouter);
-app.use('/trophies', trophyRouter);
 
 // Home page
 // Warning: avoid creating more routes in this file!
