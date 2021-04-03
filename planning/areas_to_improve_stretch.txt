@@ -4,4 +4,4 @@ LIVE QUIZZES + RESULTS
 - Lightning rounds (more points? Faster answers get more point
 	- answering faster can get you more points, waiting longer could reduce difficulty of quiz by removing wrong answers slowly (till it gets to 2 questions or so)
 - Can change the format of how a quiz is scored (like first-past-the-post scoring (race to certain amount of points)
-
+-favicon
