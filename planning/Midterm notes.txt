@@ -1,0 +1,32 @@
+quiz app/jackbox game
+
+user stories
+-------------
+as a user I can ____ because ______ and _____ happens
+nouns are resources that need tables
+ERD
+routes REST
+Browse GET /resources
+Read GET /resources/:id
+Edit POST resource/:id
+Add POST /ressource
+Delete POST /resources/:id
+
+Minimum viable product
+minimum viable demo
+
+front end
+----------
+moqups, balsamiq, draw.io, figma, whimsical
+
+no user login
+app.get('/login/:id
+faker package
+
+Back end: node, express, postgres
+front end: HTML, CSS, JS, jQuery, flexbox, CSS grid, SCSS
+
+.env
+
+
+npm run db:reset
