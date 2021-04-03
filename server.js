@@ -9,6 +9,9 @@ const bodyParser = require("body-parser");
 const sass       = require("node-sass-middleware");
 const app        = express();
 const morgan     = require('morgan');
+const trophyRouter = require('./routes/trophyRouter');
+
+
 
 // PG database client/connection setup
 const { Pool } = require('pg');
@@ -42,6 +45,8 @@ app.use("/api/users", usersRoutes(db));
 app.use("/api/widgets", widgetsRoutes(db));
 // Note: mount other resources here, using the same pattern above
 
+
+app.use('/trophies', trophyRouter);
 
 // Home page
 // Warning: avoid creating more routes in this file!
