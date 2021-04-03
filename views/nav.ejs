@@ -5,17 +5,34 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quiz App</title>
+
+    <!-- App CSS -->
+    <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
+
 </head>
 <body>
   <nav>
     <section class="nav-container">
       <aside class="quiz-logo"></aside>
       <aside class="menu">
-        <a href="#">Login</a> | <a href="#">Register</a>
+        <div class="menu-content">
+          <a href="#">Login</a> | <a href="#">Register</a>
+        </div>
+      <div class="arrow-up"></div>
       </aside>
-      <div>
+      <div class="login-form">
         <form>
-
+          <label>Username</label>
+          <div>
+            <input type="text" placeholder="Username" required/>
+          </div>
+          <label>Password</label>
+          <div>
+            <input type="password" placeholder="Password" required/>
+          </div>
+          <div>
+            <input type="submit" value="Login"/>
+          </div>
         </form>
       </div>
     </section>
