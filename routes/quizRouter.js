@@ -8,5 +8,4 @@ router.get('/create', (req, res) => {
     res.render('../views/createQuiz', templateVars);
 });
 
-
 module.exports = router;
