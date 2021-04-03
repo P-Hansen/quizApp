@@ -2,7 +2,7 @@ as a user I can ____ because ______ and _____ happens
 -------------------------------------------
 
 I'm a user and I can create a quiz
-	-make it privat
+	-make it private
 I'm a user and I can share my quiz
 I'm not a user and I can open the quiz and do it
 I'm not a user and I can see the results of the quiz I just did
