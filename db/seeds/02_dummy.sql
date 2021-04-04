@@ -6,3 +6,5 @@ INSERT INTO questions (question, quiz_id) VALUES ('who played neo in the matrix?
 INSERT INTO questions (question, quiz_id) VALUES ('what was the heighest gossing movie of 2020?', 1);
 INSERT INTO answers (correct_answer, incorrect_answers, question_id) VALUES ('keanu reeves', ARRAY ['laurence fishburne','matt damon','jet li'], 1);
 INSERT INTO answers (correct_answer, incorrect_answers, question_id) VALUES ('Bad Boys For Life', ARRAY ['Sonic The Hedgehog','Bill & Ted Face the Music','titanic'], 2);
+INSERT INTO quiz_attempts (user_id, quiz_id) VALUES (1,1);
+INSERT INTO quiz_attempt_results (quiz_attempt, question_id, answer_id) VALUES (1,1,1);

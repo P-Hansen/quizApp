@@ -3,6 +3,6 @@ DROP TABLE IF EXISTS quiz_attempts CASCADE;
 
 CREATE TABLE quiz_attempts (
   id SERIAL PRIMARY KEY NOT NULL,
-  question_id INTEGER REFERENCES questions(id),
-  users_id INTEGER REFERENCES users(id)
+  quiz_id INTEGER REFERENCES quizzes(id),
+  user_id INTEGER REFERENCES users(id)
 );
