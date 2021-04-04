@@ -5,16 +5,28 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+
+    <link rel="stylesheet" href="/styles/takeQuiz.css" type="text/css" />
+
 </head>
 <body>
     <div class="quiz_box">
-      <header>
-        <div class="title"> QuiZapp</div>
-        <div class="timer">
-          <div class="time_text">Time Left</div>
-          <div class="timer_sec">15</div>
-        </div>
-      </header>
+      <div class="title">Quiz Name!</div>
+      <img src="/images/brain3.png">
+      <label for="file">3/10</label>
+      <progress id="file" value="30" max="100"> 30% </progress>
+      <div class="timer">
+        <div class="time_text">Time Left</div>
+        <div class="timer_sec">15</div>
+      </div>
+      <h1>Riddle me this batman</h1>
+      <div id="answer-buttons">
+        <button type="button" onclick="alert('Hello world!')">A</button><br>
+        <button type="button" onclick="alert('Hello world!')">B</button><br>
+        <button type="button" onclick="alert('Hello world!')">C</button><br>
+        <button type="button" onclick="alert('Hello world!')">D</button>
+      </div>
+    </div>
       <section>
       </section>
     </div>
