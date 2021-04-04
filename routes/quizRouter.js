@@ -8,6 +8,31 @@ router.get('/create', (req, res) => {
     res.render('../views/createQuiz', templateVars);
 });
 
+//GET /quiz/:id
+router.get('/:id', (req, res) => {
+    //console.log("this is the route", req.params.id.slice(1));
+    const quizID = req.params.id.slice(1);
+    // db.query(`SELECT *
+    // FROM quizzes
+    // WHERE id = $1;`, quizID)
+    // .then(data => {
+    //     const quizze = data.rows[0];
+    //     return quizze
+    //     //return res.json({ quizze });
+    // })
+    // .then((quiz)=>{
+    //     const templateVars = {};
+    //     res.render('../views/takeQuiz', templateVars);
+    // })
+    // .catch(err => {
+    //     res
+    //     .status(500)
+    //     .json({ error: err.message });
+    // });
+    const templateVars = {};
+    res.render('../views/takeQuiz', templateVars);
+});
+
 //get the public quizzes
 router.get("/", (req, res) => {
     db.query(`SELECT * FROM quizzes;`)

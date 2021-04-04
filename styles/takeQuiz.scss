@@ -1,0 +1,12 @@
+.quiz_box {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+
+    button {
+        display: flex;
+        background-color: rebeccapurple;
+        color: white;
+    }
+}
