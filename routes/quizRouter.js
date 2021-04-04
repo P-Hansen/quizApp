@@ -10,12 +10,10 @@ router.get('/create', (req, res) => {
 
 //get the public quizzes
 router.get("/", (req, res) => {
-    console.log("I'm gonna go get it:");
     db.query(`SELECT * FROM quizzes;`)
     .then(data => {
-        const users = data.rows;
-        res.json({ users });
-        console.log(data.rows);
+        const quizzes = data.rows[0];
+        res.json({ quizzes });
     })
     .catch(err => {
         res

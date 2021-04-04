@@ -1,5 +1,6 @@
 const express = require('express');
 const router = express.Router();
+const db = require('../db/dbConnection.js');
 
 //GET /results/trophies/
 router.get('/trophies', (req, res) => {

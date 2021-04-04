@@ -14,12 +14,6 @@ const profileRouter = require('./routes/profileRouter');
 const quizRouter = require('./routes/quizRouter');
 const resultsRouter = require('./routes/resultsRouter');
 
-// PG database client/connection setup
-const { Pool } = require('pg');
-const dbParams = require('./lib/db.js');
-const db = new Pool(dbParams);
-db.connect();
-
 // Load the logger first so all (static) HTTP requests are logged to STDOUT
 // 'dev' = Concise output colored by response status for development use.
 //         The :status token will be colored red for server error codes, yellow for client error codes, cyan for redirection codes, and uncolored for all other codes.
@@ -44,22 +38,6 @@ const widgetsRoutes = require("./routes/widgets");
 // Note: Feel free to replace the example routes below with your own
 app.use("/api/users", usersRoutes(db));
 app.use("/api/widgets", widgetsRoutes(db));
-
-//get the public quizzes
-app.get("/", (req, res) => {
-  console.log("I'm gonna go get it:");
-  db.query(`SELECT * FROM quizzes;`)
-  .then(data => {
-      const users = data.rows;
-      res.json({ users });
-      console.log(data.rows);
-  })
-  .catch(err => {
-      res
-      .status(500)
-      .json({ error: err.message });
-  });
-});
 
 app.use('/quiz', quizRouter);
 app.use('/profile', profileRouter);
