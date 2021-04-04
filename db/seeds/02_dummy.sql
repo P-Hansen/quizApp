@@ -11,11 +11,11 @@ INSERT INTO answers (correct_answer, incorrect_answers, question_id) VALUES ('ke
 INSERT INTO answers (correct_answer, incorrect_answers, question_id) VALUES ('Bad Boys For Life', ARRAY ['Sonic The Hedgehog','Bill & Ted Face the Music','titanic'], 2);
 
 INSERT INTO questions (question, quiz_id) VALUES ('The most graphically violent game to precede the creation of the ESRB (Entertainment Software Rating Board) was...', 2);
-INSERT INTO questions (question, quiz_id) VALUES ('What is the world&#039;s first video game console?', 2);
-INSERT INTO questions (question, quiz_id) VALUES ('Which of the following is a class in the game &quot;Hearthstone&quot;?', 2);
-INSERT INTO answers (correct_answer, incorrect_answers, question_id) VALUES ('Mortal Kombat', ARRAY ['Duke Nukem','Resident Evil','Doom'], 1);
-INSERT INTO answers (correct_answer, incorrect_answers, question_id) VALUES ('Magnavox Odyssey', ARRAY ['Coleco Telstar','Nintendo Color TV Game','Atari 2600'], 2);
-INSERT INTO answers (correct_answer, incorrect_answers, question_id) VALUES ('Priest', ARRAY ['Sage','Cleric','Monk'], 3);
+INSERT INTO questions (question, quiz_id) VALUES ('What is the worlds first video game console?', 2);
+INSERT INTO questions (question, quiz_id) VALUES ('Which of the following is a class in the game Hearthstone?', 2);
+INSERT INTO answers (correct_answer, incorrect_answers, question_id) VALUES ('Mortal Kombat', ARRAY ['Duke Nukem','Resident Evil','Doom'], 3);
+INSERT INTO answers (correct_answer, incorrect_answers, question_id) VALUES ('Magnavox Odyssey', ARRAY ['Coleco Telstar','Nintendo Color TV Game','Atari 2600'], 4);
+INSERT INTO answers (correct_answer, incorrect_answers, question_id) VALUES ('Priest', ARRAY ['Sage','Cleric','Monk'], 5);
 
 INSERT INTO quiz_attempts (user_id, quiz_id) VALUES (1,1);
 
