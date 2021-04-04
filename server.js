@@ -45,6 +45,22 @@ const widgetsRoutes = require("./routes/widgets");
 app.use("/api/users", usersRoutes(db));
 app.use("/api/widgets", widgetsRoutes(db));
 
+//get the public quizzes
+app.get("/", (req, res) => {
+  console.log("I'm gonna go get it:");
+  db.query(`SELECT * FROM quizzes;`)
+  .then(data => {
+      const users = data.rows;
+      res.json({ users });
+      console.log(data.rows);
+  })
+  .catch(err => {
+      res
+      .status(500)
+      .json({ error: err.message });
+  });
+});
+
 app.use('/quiz', quizRouter);
 app.use('/profile', profileRouter);
 app.use('/results', resultsRouter);
