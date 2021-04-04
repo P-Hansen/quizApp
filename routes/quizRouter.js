@@ -12,9 +12,10 @@ router.get('/create', (req, res) => {
 router.get('/:id', (req, res) => {
     //console.log("this is the route", req.params.id.slice(1));
     const quizID = req.params.id.slice(1);
-    db.query(`SELECT questions.*
+    db.query(`SELECT questions.*, answers.*
     FROM quizzes
     JOIN questions ON quizzes.id = questions.quiz_id
+    JOIN answers ON questions.id = answers.question_id
     WHERE quizzes.id = $1;`, [quizID])
     .then(data => {
         const quiz = data.rows;
