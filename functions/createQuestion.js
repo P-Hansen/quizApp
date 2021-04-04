@@ -1,19 +1,21 @@
-$(document).ready(function(){
+// Initial code for using a 'add question' button
 
-  $('#but_add').click(function(){
+// $(document).ready(function(){
 
-   // Create clone of <div class='input-form'>
-   var newel = $('.input-form:last').clone(true);
+//   $('#but_add').click(function(){
 
-   // Add after last <div class='input-form'>
-   $(newel).insertAfter(".input-form:last");
-  });
+//    // Create clone of <div class='input-form'>
+//    var newel = $('.input-form:last').clone(true);
 
-  $('.txt').focus(function(){
-   $(this).css('border-color','red');
-  });
+//    // Add after last <div class='input-form'>
+//    $(newel).insertAfter(".input-form:last");
+//   });
 
-  $('.txt').focusout(function(){
-   $(this).css('border-color','initial');
-  });
- });
+//   $('.txt').focus(function(){
+//    $(this).css('border-color','red');
+//   });
+
+//   $('.txt').focusout(function(){
+//    $(this).css('border-color','initial');
+//   });
+//  });

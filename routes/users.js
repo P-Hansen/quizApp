@@ -23,3 +23,10 @@ module.exports = (db) => {
   });
   return router;
 };
+
+app.get('/login/:userId', (req, res) => {
+  // if using cookie-session middleware
+  req.session.user_id = req.params.userId;
+  // redirect the user somewhere
+  res.redirect('/');
+});
