@@ -12,25 +12,21 @@ router.get('/create', (req, res) => {
 router.get('/:id', (req, res) => {
     //console.log("this is the route", req.params.id.slice(1));
     const quizID = req.params.id.slice(1);
-    // db.query(`SELECT *
-    // FROM quizzes
-    // WHERE id = $1;`, quizID)
-    // .then(data => {
-    //     const quizze = data.rows[0];
-    //     return quizze
-    //     //return res.json({ quizze });
-    // })
-    // .then((quiz)=>{
-    //     const templateVars = {};
-    //     res.render('../views/takeQuiz', templateVars);
-    // })
-    // .catch(err => {
-    //     res
-    //     .status(500)
-    //     .json({ error: err.message });
-    // });
-    const templateVars = {};
-    res.render('../views/takeQuiz', templateVars);
+    db.query(`SELECT questions.*
+    FROM quizzes
+    JOIN questions ON quizzes.id = questions.quiz_id
+    WHERE quizzes.id = $1;`, [quizID])
+    .then(data => {
+        const quiz = data.rows;
+        console.log(quiz);
+        const templateVars = {quiz};
+        res.render('../views/takeQuiz', templateVars);
+    })
+    .catch(err => {
+        res
+        .status(500)
+        .json({ error: err.message });
+    });
 });
 
 //get the public quizzes
