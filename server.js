@@ -14,7 +14,6 @@ const profileRouter = require('./routes/profileRouter');
 const quizRouter = require('./routes/quizRouter');
 const resultsRouter = require('./routes/resultsRouter');
 
-
 // PG database client/connection setup
 const { Pool } = require('pg');
 const dbParams = require('./lib/db.js');
