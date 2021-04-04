@@ -5,5 +5,5 @@ CREATE TABLE quiz_attempt_results (
   id SERIAL PRIMARY KEY NOT NULL,
   quiz_attempts INTEGER REFERENCES quiz_attempts(id),
   question_id INTEGER REFERENCES questions(id),
-  answer_id INTEGER REFERENCES answer(id),
+  answer_id INTEGER REFERENCES answers(id)
 );
