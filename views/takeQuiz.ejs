@@ -17,7 +17,16 @@
       <progress id="file" value="30" max="100"> 30% </progress>
       <div class="timer">
         <div class="time_text">Time Left</div>
-        <div class="timer_sec">15</div>
+        <div class="timer_sec"><h2 id="question-timer"></h2>
+          <script>
+            let s = 16;
+            const myTimer = () => {
+              s -= 1;
+              document.getElementById("question-timer").innerHTML = s;
+            };
+            let myVar = setInterval(myTimer, 1000);
+            </script>
+        </div>
       </div>
       <div id="questions-box">
         <h1><%=quiz[0].question%></h1>
