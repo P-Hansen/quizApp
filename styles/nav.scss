@@ -24,13 +24,14 @@ body {
   width: 36px;
   height: 36px;
   margin: -8px 0;
-  float: left;
+  float: right;
   margin-right: 10px;
 }
 .navbar .navbar-brand, .navbar .navbar-brand:hover, .navbar .navbar-brand:focus {
   padding-left: 0;
   font-size: 20px;
-  // padding-right: 50px;
+  padding-right: 0;
+
 }
 .navbar .navbar-brand b {
   font-weight: bold;
