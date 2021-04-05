@@ -8,5 +8,12 @@ router.get('/', (req, res) => {
     res.render('../views/editProfile', templateVars);
 });
 
+router.get('/login/:userId', (req, res) => {
+  // if using cookie-session middleware
+  req.session.user_id = req.params.userId;
+  // redirect the user somewhere
+  res.redirect('/');
+});
+
 
 module.exports = router;

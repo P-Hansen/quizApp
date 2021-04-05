@@ -9,10 +9,12 @@ const bodyParser = require("body-parser");
 const sass       = require("node-sass-middleware");
 const app        = express();
 const morgan     = require('morgan');
+const cookieSession = require('cookie-session');
 
 const profileRouter = require('./routes/profileRouter');
 const quizRouter = require('./routes/quizRouter');
 const resultsRouter = require('./routes/resultsRouter');
+const quizAPI = require('./public/scripts/quizzes');
 
 // Load the logger first so all (static) HTTP requests are logged to STDOUT
 // 'dev' = Concise output colored by response status for development use.
@@ -29,6 +31,12 @@ app.use("/styles", sass({
 }));
 app.use(express.static("public"));
 
+app.use(cookieSession({
+  name: 'session',
+  keys: ['guestID', 'userID'],
+  maxAge: 24 * 60 * 60 * 1000 // 24 hours
+}));
+
 // Separated Routes for each Resource
 // Note: Feel free to replace the example routes below with your own
 // const usersRoutes = require("./routes/users");
@@ -42,6 +50,8 @@ app.use(express.static("public"));
 app.use('/quiz', quizRouter);
 app.use('/profile', profileRouter);
 app.use('/results', resultsRouter);
+app.use('/quizzes', quizAPI);
+
 
 // Home page
 // Warning: avoid creating more routes in this file!
