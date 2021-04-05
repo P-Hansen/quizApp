@@ -23,7 +23,6 @@ router.get('/', (req, res) => {
 
 let questions = [];
 
-let api_url = 'https://opentdb.com/api.php?amount=10&category=15&type=multiple'
 fetch('https://opentdb.com/api.php?amount=10&category=15&type=multiple')
 .then((res) => {
   return res.json();
