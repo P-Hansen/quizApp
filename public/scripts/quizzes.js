@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const db = require('../db/dbConnection.js');
+// const db = require('../db/dbConnection.js');
 const fetch = require('node-fetch');
 const pg = require('pg');
 const bodyParser = require('body-parser')

@@ -13,7 +13,7 @@ const morgan     = require('morgan');
 const profileRouter = require('./routes/profileRouter');
 const quizRouter = require('./routes/quizRouter');
 const resultsRouter = require('./routes/resultsRouter');
-const quizAPI = require('./views/quizzes');
+const quizAPI = require('./public/scripts/quizzes');
 
 // Load the logger first so all (static) HTTP requests are logged to STDOUT
 // 'dev' = Concise output colored by response status for development use.
