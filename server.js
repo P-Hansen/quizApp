@@ -32,7 +32,7 @@ app.use(express.static("public"));
 
 app.use(cookieSession({
   name: 'session',
-  keys: ['key1', 'key2'],
+  keys: ['guestID', 'userID'],
   maxAge: 24 * 60 * 60 * 1000 // 24 hours
 }));
 
@@ -49,6 +49,7 @@ app.use(cookieSession({
 app.use('/quiz', quizRouter);
 app.use('/profile', profileRouter);
 app.use('/results', resultsRouter);
+
 
 // Home page
 // Warning: avoid creating more routes in this file!
