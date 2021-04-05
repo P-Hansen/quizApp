@@ -8,26 +8,25 @@ router.get('/create', (req, res) => {
     res.render('../views/createQuiz', templateVars);
 });
 
+//GET /quiz/:id/data
+router.get('/:id/data', (req, res) => {
+      db.query(`SELECT questions.*, answers.*
+  FROM quizzes
+  JOIN questions ON quizzes.id = questions.quiz_id
+  JOIN answers ON questions.id = answers.question_id
+  WHERE quizzes.id = $1;`, [req.params.id])
+  .then((result)=>{
+    res.send(result.rows);
+  })
+  .catch((err)=>{
+    console.log(err.message);
+  })
+});
+
 //GET /quiz/:id
 router.get('/:id', (req, res) => {
-    //console.log("this is the route", req.params.id.slice(1));
-    const quizID = req.params.id.slice(1);
-    db.query(`SELECT questions.*, answers.*
-    FROM quizzes
-    JOIN questions ON quizzes.id = questions.quiz_id
-    JOIN answers ON questions.id = answers.question_id
-    WHERE quizzes.id = $1;`, [quizID])
-    .then(data => {
-        const quiz = data.rows;
-        console.log(quiz);
-        const templateVars = {quiz};
-        res.render('../views/takeQuiz', templateVars);
-    })
-    .catch(err => {
-        res
-        .status(500)
-        .json({ error: err.message });
-    });
+    const templateVars = {};
+    res.render('takeQuiz', templateVars);
 });
 
 //get the public quizzes
