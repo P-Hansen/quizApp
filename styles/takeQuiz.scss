@@ -1,3 +1,7 @@
+body {
+    background-color:rgb(131, 255, 218);
+}
+
 .quiz-box {
     display: flex;
     align-items: center;
@@ -5,7 +9,7 @@
     text-align: center;
 
     #questions-box {
-
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
         #answer-buttons{
             display: flex;
             flex-direction: column;
@@ -13,8 +17,15 @@
 
             button {
                 display: flex;
-                background-color: rebeccapurple;
+                background-color: rgb(116, 73, 158);
                 color: white;
+                text-align: center;
+                align-content: center;
+                justify-content: center;
+                align-items: center;
+                font-size: 2em;
+                width: 60%;
+                height: 75px;
             }
         }
         
@@ -23,5 +34,7 @@
 }
 
 .clicked{
-    background-color: turquoise !important;
+    background-color: rgb(224, 208, 64) !important;
+    border: 10;
+    border-color: floralwhite;
 }
