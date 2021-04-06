@@ -33,7 +33,7 @@ router.get('/:id', (req, res) => {
 router.get("/", (req, res) => {
     db.query(`SELECT * FROM quizzes;`)
     .then(data => {
-        const quizzes = data.rows[0];
+        const quizzes = data.rows;
         res.json({ quizzes });
     })
     .catch(err => {
