@@ -10,7 +10,17 @@ router.get('/live', (req, res) => {
 
 //GET /results/:id READ
 router.get('/:id', (req, res) => {
-
+//     db.query(`SELECT questions.*, answers.*
+//     FROM quizzes
+//     JOIN questions ON quizzes.id = questions.quiz_id
+//     JOIN answers ON questions.id = answers.question_id
+//     WHERE quizzes.id = $1;`, [req.params.id])
+//   .then((result)=>{
+//     res.send(result.rows);
+//   })
+//   .catch((err)=>{
+//     console.log(err.message);
+//   })
 });
 
 //POST /results/ EDIT

@@ -10,11 +10,11 @@ router.get('/create', (req, res) => {
 
 //GET /quiz/:id/data
 router.get('/:id/data', (req, res) => {
-      db.query(`SELECT questions.*, answers.*
-  FROM quizzes
-  JOIN questions ON quizzes.id = questions.quiz_id
-  JOIN answers ON questions.id = answers.question_id
-  WHERE quizzes.id = $1;`, [req.params.id])
+  db.query(`SELECT questions.*, answers.*
+    FROM quizzes
+    JOIN questions ON quizzes.id = questions.quiz_id
+    JOIN answers ON questions.id = answers.question_id
+    WHERE quizzes.id = $1;`, [req.params.id])
   .then((result)=>{
     res.send(result.rows);
   })

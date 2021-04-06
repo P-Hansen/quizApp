@@ -3,11 +3,10 @@
 $(document).ready(function() {
   const quizID = window.location.pathname.slice(7);
   let currentQuestion = -1;
-  let questionTime = 16;
+  let questionTime = 5;
 
   const questionTimer = (quiz) => {
     questionTime -= 1;
-    console.log("times up!", questionTime);
     document.getElementById("question-timer").innerHTML = questionTime;
     if (questionTime === 0) {
       questionTime = 16;
@@ -18,6 +17,8 @@ $(document).ready(function() {
       document.getElementById("c").innerHTML = quiz[currentQuestion].incorrect_answers[1];
       document.getElementById("d").innerHTML = quiz[currentQuestion].incorrect_answers[2];
       //dp push
+      console.log(document.getElementsByClassName("clicked")[0].id);
+      $(document.getElementsByClassName("clicked")).removeClass("clicked");
     }
   };
 
