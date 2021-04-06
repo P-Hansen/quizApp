@@ -10,6 +10,7 @@ router.get('/live', (req, res) => {
 
 //GET /results/:id READ
 router.get('/:id', (req, res) => {
+    console.log("and now for results!")
 //     db.query(`SELECT questions.*, answers.*
 //     FROM quizzes
 //     JOIN questions ON quizzes.id = questions.quiz_id
@@ -21,6 +22,8 @@ router.get('/:id', (req, res) => {
 //   .catch((err)=>{
 //     console.log(err.message);
 //   })
+    const templateVars = {};
+    res.render('trophyCase', templateVars);
 });
 
 //POST /results/ EDIT

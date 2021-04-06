@@ -11,6 +11,14 @@ $(document).ready(function() {
     questionTime -= 1;
     document.getElementById("question-timer").innerHTML = questionTime;
     if (questionTime === 0) {
+      //end of quiz, load results
+      if ((currentQuestion+2) === quiz.length+1) {
+        window.location.replace(`/results/${quizID}/`)
+      };
+      document.getElementById("quiz-length-bar-label").innerText = `${currentQuestion+2}/${quiz.length}`;
+      $(document.getElementById("quiz-length-bar")).val(currentQuestion+2);
+      document.getElementById("quiz-length-bar").max = quiz.length;
+      console.log("how long is this>",quiz.length);
       questionTime = 16;
       currentQuestion++;
       document.getElementById("question").innerHTML = quiz[currentQuestion].question;
