@@ -7,8 +7,11 @@ $(document).ready(function() {
   let questionTime = 5;
   let totalPoints = 0;
   let answer = null;
-  //INSERT INTO quiz_attempts (user_id, quiz_id) VALUES (1,1);
-  //INSERT INTO quiz_attempt_results (quiz_attempt, question_id, answer_id, total) VALUES (1,1,1,6);
+  $.ajax({
+    method:'POST',
+    url: `/results`,
+    data: {quizID}
+  })
 
   const questionTimer = (quiz) => {
     questionTime -= 1;
@@ -24,16 +27,16 @@ $(document).ready(function() {
       }
       catch (err) {answer = null;};
       //add points to total if answer correct
-      if (answer === 'a'){
+      if (answer === 'a') {
         totalPoints += 10;
         document.getElementById("score").innerText = totalPoints;
-      }
-      //send update to the db (UPDATE quiz_attempt_results SET total = #newTotalPoints#)
-      $.ajax({
-        method:'POST',
-        url: `/results/${quizID}`,
-        data: totalPoints
-      })
+        //send update to the db (UPDATE quiz_attempt_results SET total = #newTotalPoints#)
+        $.ajax({
+          method:'POST',
+          url: `/results/${quizID}`,
+          data: {totalPoints}
+        });
+      };
       //reset timer and increment question
       questionTime = 16;
       currentQuestion++;

@@ -26,9 +26,11 @@ router.get('/:id', (req, res) => {
     res.render('trophyCase', templateVars);
 });
 
-//POST /results/ EDIT
+//POST /results/:id EDIT
 router.post('/:id', (req, res) => {
-
+    console.log("total score updated to", req.body.totalPoints);
+    db.query(`UPDATE quiz_attempt_results SET total = $1
+    WHERE quiz_attempt = $2;`, [req.body.totalPoints, 1]);
 });
 
 //POST /results/ DELETE
@@ -38,9 +40,9 @@ router.post('/:id/delete', (req, res) => {
 
 //POST /results/ ADD
 router.post('/', (req, res) => {
-    db.query(`INSERT INTO quiz_attempts (user_id, quiz_id) VALUES (1,$1);
-  INSERT INTO quiz_attempt_results (quiz_attempt, question_id, answer_id, total) VALUES ($2,1,1,0);`, [req.params.id,1]);
-
+    console.log("you have started this quiz",req.body.quizID);
+    db.query(`INSERT INTO quiz_attempts (user_id, quiz_id) VALUES (1,$1);`, [req.body.quizID]);
+    db.query(`INSERT INTO quiz_attempt_results (quiz_attempt, question_id, answer_id, total) VALUES ($1,1,1,0);`, [1]);
 });
 
 //GET /results/ BROWSE
