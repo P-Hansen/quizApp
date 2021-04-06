@@ -10,11 +10,12 @@ const sass       = require("node-sass-middleware");
 const app        = express();
 const morgan     = require('morgan');
 const cookieSession = require('cookie-session');
+app.use(bodyParser.urlencoded({ extended: true }));
 
 const profileRouter = require('./routes/profileRouter');
 const quizRouter = require('./routes/quizRouter');
 const resultsRouter = require('./routes/resultsRouter');
-const quizAPI = require('./public/scripts/quizzes');
+const quizAPI = require('./routes/quizApiRouter');
 
 // Load the logger first so all (static) HTTP requests are logged to STDOUT
 // 'dev' = Concise output colored by response status for development use.
@@ -22,7 +23,6 @@ const quizAPI = require('./public/scripts/quizzes');
 app.use(morgan('dev'));
 
 app.set("view engine", "ejs");
-app.use(bodyParser.urlencoded({ extended: true }));
 app.use("/styles", sass({
   src: __dirname + "/styles",
   dest: __dirname + "/public/styles",
