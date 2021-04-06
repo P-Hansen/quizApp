@@ -14,7 +14,7 @@ const cookieSession = require('cookie-session');
 const profileRouter = require('./routes/profileRouter');
 const quizRouter = require('./routes/quizRouter');
 const resultsRouter = require('./routes/resultsRouter');
-const quizAPI = require('./public/scripts/quizzes');
+const quizAPI = require('./routes/quizApiRouter');
 
 // Load the logger first so all (static) HTTP requests are logged to STDOUT
 // 'dev' = Concise output colored by response status for development use.
