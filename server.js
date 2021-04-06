@@ -12,7 +12,7 @@ const morgan     = require('morgan');
 const cookieSession = require('cookie-session');
 app.use(bodyParser.urlencoded({ extended: true }));
 
-const profileRouter = require('./routes/profileRouter');
+const userRouter = require('./routes/userRouter');
 const quizRouter = require('./routes/quizRouter');
 const resultsRouter = require('./routes/resultsRouter');
 const quizAPI = require('./routes/quizApiRouter');
@@ -48,7 +48,7 @@ app.use(cookieSession({
 // app.use("/api/widgets", widgetsRoutes(db));
 
 app.use('/quiz', quizRouter);
-app.use('/profile', profileRouter);
+app.use('/profile', userRouter);
 app.use('/results', resultsRouter);
 app.use('/quizzes', quizAPI);
 
@@ -57,6 +57,7 @@ app.use('/quizzes', quizAPI);
 // Warning: avoid creating more routes in this file!
 // Separate them into separate routes files (see above).
 app.get("/", (req, res) => {
+  req.session.user_id = req.params.userId;
   res.render("index");
 });
 

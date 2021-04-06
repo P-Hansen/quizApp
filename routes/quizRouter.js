@@ -9,18 +9,28 @@ router.get('/create', (req, res) => {
     res.render('../views/createQuiz', templateVars);
 });
 
-router.post('/create', (req, res) => {
-  console.log("you're in the route!")
-  console.log("1111", req.body);
-  db.query(`
-  INSERT INTO quizzes (public, category, user_id)
-  VALUES ($1, $2, $3)
-  RETURNING *;
-  `, [true, 'random', 1])
-  .then((RETURNING) => {
-    console.log(RETURNING);
-  })
-})
+// router.post('/create', (req, res) => { // will probably need to add some type of user_id to this field at some point
+//   console.log("you're in the route!")
+//   console.log("1111", req.body);
+//   db.query(`
+//   INSERT INTO quizzes (public, title, category, user_id)
+//   VALUES ($1, $2, $3, $4)
+//   RETURNING *;
+//   `, [true, '123', 'random', 1]) // Does public always default to true?//
+//   .then((RETURNING) => {
+//     console.log(RETURNING);
+//   })
+// })
+
+// router.post('/create', (req, res) => { // will probably need to add some type of user_id to this field at some point
+//   let query = `
+//   INSERT INTO questions (question, quiz_id)
+//   VALUES ($1, $2)
+//   RETURNING *;
+// `;
+//   let values = [req.body.question];
+
+// })
 
 // INSERT INTO questions (question, quiz_id)
 // VALUES ($4, $5);
