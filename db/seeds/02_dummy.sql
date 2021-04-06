@@ -2,8 +2,8 @@ INSERT INTO users (name, password, email) VALUES ('Alice', 'password', 'alice@ho
 INSERT INTO users (name, password, email) VALUES ('Kira', 'password', 'kira@hotmale.com');
 INSERT INTO users (name, password, email) VALUES ('Terry', 'password', 'terry@hotmale.com');
 
-INSERT INTO quizzes (public, category, user_id) VALUES (true, 'movies', 1);
-INSERT INTO quizzes (public, category, user_id) VALUES (true, 'video game', 2);
+INSERT INTO quizzes (public, title, category, user_id) VALUES (true, 'Movies', 'movies', 1);
+INSERT INTO quizzes (public, title, category, user_id) VALUES (true, 'Video Games', 'video game', 2);
 
 INSERT INTO questions (question, quiz_id) VALUES ('who played neo in the matrix?', 1);
 INSERT INTO questions (question, quiz_id) VALUES ('what was the highest gossing movie of 2020?', 1);

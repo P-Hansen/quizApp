@@ -18,20 +18,20 @@
   <main class="create-quiz">
     <form action="/quiz/create" method="POST">
         <label for="q1"></label><br>
-        <input type="text" class="title" name="quiz-name" placeholder="Title of my Quiz">
+        <input type="text" class="title" name="title" placeholder="Title of my Quiz">
         <br>
         <br>
         <input type="text" class="q" name="q1" placeholder="Question 1">
         <div class='input-form'>
-            <input type="text" class="a" name="a1" placeholder="A">
+            <input type="text" class="a" name="a1" placeholder="Correct Answer">
             <input type="text" class="a" name="a2" placeholder="B">
             <input type="text" class="a" name="a3" placeholder="C">
             <input type="text" class="a" name="a4" placeholder="D">
         </div>
-        <!-- <br>
-        <input type="text" class="q" name="q2" placeholder="Question 2">
+        <br>
+        <!-- <input type="text" class="q" name="q2" placeholder="Question 2">
         <div>
-            <input type="text" class="a" name="a1" placeholder="A">
+          <input type="text" class="a" name="a1" placeholder="Correct Answer">
             <input type="text" class="a" name="a2" placeholder="B">
             <input type="text" class="a" name="a3" placeholder="C">
             <input type="text" class="a" name="a4" placeholder="D">
@@ -39,7 +39,7 @@
         <br>
         <input type="text" class="q" name="q3" placeholder="Question 3">
         <div>
-            <input type="text" class="a" name="a1" placeholder="A">
+          <input type="text" class="a" name="a1" placeholder="Correct Answer">
             <input type="text" class="a" name="a2" placeholder="B">
             <input type="text" class="a" name="a3" placeholder="C">
             <input type="text" class="a" name="a4" placeholder="D">
@@ -47,7 +47,7 @@
         <br>
         <input type="text" class="q" name="q3" placeholder="Question 4">
         <div>
-            <input type="text" class="a" name="a1" placeholder="A">
+          <input type="text" class="a" name="a1" placeholder="Correct Answer">
             <input type="text" class="a" name="a2" placeholder="B">
             <input type="text" class="a" name="a3" placeholder="C">
             <input type="text" class="a" name="a4" placeholder="D">
@@ -55,7 +55,7 @@
         <br>
         <input type="text" class="q" name="q3" placeholder="Question 5">
         <div>
-            <input type="text" class="a" name="a1" placeholder="A">
+          <input type="text" class="a" name="a1" placeholder="Correct Answer">
             <input type="text" class="a" name="a2" placeholder="B">
             <input type="text" class="a" name="a3" placeholder="C">
             <input type="text" class="a" name="a4" placeholder="D">
@@ -63,7 +63,7 @@
         <br>
         <input type="text" class="q" name="q3" placeholder="Question 6">
         <div>
-            <input type="text" class="a" name="a1" placeholder="A">
+          <input type="text" class="a" name="a1" placeholder="Correct Answer">
             <input type="text" class="a" name="a2" placeholder="B">
             <input type="text" class="a" name="a3" placeholder="C">
             <input type="text" class="a" name="a4" placeholder="D">
@@ -71,7 +71,7 @@
         <br>
         <input type="text" class="q" name="q3" placeholder="Question 7">
         <div>
-            <input type="text" class="a" name="a1" placeholder="A">
+          <input type="text" class="a" name="a1" placeholder="Correct Answer">
             <input type="text" class="a" name="a2" placeholder="B">
             <input type="text" class="a" name="a3" placeholder="C">
             <input type="text" class="a" name="a4" placeholder="D">
@@ -79,7 +79,7 @@
         <br>
         <input type="text" class="q" name="q3" placeholder="Question 8">
         <div>
-            <input type="text" class="a" name="a1" placeholder="A">
+          <input type="text" class="a" name="a1" placeholder="Correct Answer">
             <input type="text" class="a" name="a2" placeholder="B">
             <input type="text" class="a" name="a3" placeholder="C">
             <input type="text" class="a" name="a4" placeholder="D">
@@ -87,7 +87,7 @@
         <br>
         <input type="text" class="q" name="q3" placeholder="Question 9">
         <div>
-            <input type="text" class="a" name="a1" placeholder="A">
+          <input type="text" class="a" name="a1" placeholder="Correct Answer">
             <input type="text" class="a" name="a2" placeholder="B">
             <input type="text" class="a" name="a3" placeholder="C">
             <input type="text" class="a" name="a4" placeholder="D">
@@ -95,14 +95,15 @@
         <br>
         <input type="text" class="q" name="q3" placeholder="Question 10">
         <div>
-            <input type="text" class="a" name="a1" placeholder="A">
+          <input type="text" class="a" name="a1" placeholder="Correct Answer">
             <input type="text" class="a" name="a2" placeholder="B">
             <input type="text" class="a" name="a3" placeholder="C">
             <input type="text" class="a" name="a4" placeholder="D">
-        </div> -->
-        <br>
-        <input type="checkbox" id="private" name="private" value="private">
+        </div>
+        <br> -->
+        <input type="checkbox" id="private" name="private" value="true">
         <label for="private">Make your quiz private</label>
+        <br>
         <input type="submit" id="create-quiz-button" value="Create Quiz">
     </form>
   </main>
