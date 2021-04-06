@@ -1,0 +1,11 @@
+body {
+    display: flex;
+    flex-direction: column;
+    
+    #live-players-container {
+         display: flex;
+         justify-content: space-evenly;
+         margin: 75px;
+        // flex-direction: row;
+    }
+}

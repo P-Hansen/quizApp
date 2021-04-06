@@ -1,0 +1,17 @@
+header {
+    display: flex;
+    flex-direction: column;
+}
+body {
+    .main-container{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        #quizzes-done {
+            border: 3px solid black;
+        }
+        #results-container {
+            border: 3px solid black;
+        }
+    }
+}

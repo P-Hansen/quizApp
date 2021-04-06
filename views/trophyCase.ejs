@@ -5,12 +5,31 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-</head>
-<body>
-  <header>
-    <%- include('./nav') %>
-  </header>
-    <p>here is all your baller shit</p>
 
+    <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
+    <link rel="stylesheet" href="/vendor/border-box.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/trophyCase.css" type="text/css" />
+
+    <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
+    <script type="text/javascript" src="/scripts/resultsListener.js"></script>
+</head>
+<header>
+  <%- include('./nav') %>
+</header>
+<br>
+<body>
+  <div class="main-container">
+    <div id="quizzes-done">
+      <p>ALL Time</p>
+      <p>Quiz 1</p>
+      <p>Quiz 2</p>
+      <p>Quiz 3</p>
+    </div>
+    <div id="results-container">
+      <h5>RESULTS</h5>
+      <p>5/10</p>
+    </div>
+  </div>
 </body>
+
 </html>
