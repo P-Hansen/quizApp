@@ -1,9 +1,12 @@
 //listens during the quiz
 
 $(document).ready(function() {
+  $(document.getElementById("questions-box")).hide();
   const quizID = window.location.pathname.slice(7);
   let currentQuestion = -1;
   let questionTime = 5;
+  let totalPoints = 0;
+  let answer = null;
   //INSERT INTO quiz_attempts (user_id, quiz_id) VALUES (1,1);
   //INSERT INTO quiz_attempt_results (quiz_attempt, question_id, answer_id, total) VALUES (1,1,1,6);
 
@@ -11,29 +14,44 @@ $(document).ready(function() {
     questionTime -= 1;
     document.getElementById("question-timer").innerHTML = questionTime;
     if (questionTime === 0) {
-      //end of quiz, load results
-      if ((currentQuestion+2) === quiz.length+1) {
-        window.location.replace(`/results/${quizID}/`)
-      };
-      document.getElementById("quiz-length-bar-label").innerText = `${currentQuestion+2}/${quiz.length}`;
-      $(document.getElementById("quiz-length-bar")).val(currentQuestion+2);
-      document.getElementById("quiz-length-bar").max = quiz.length;
-      console.log("how long is this>",quiz.length);
+      $(document.getElementById("questions-box")).show();
+      try {
+        //get id of the answer picked
+        answer = document.getElementsByClassName("clicked")[0].id;
+        console.log("answer picked:", answer);
+        //reset buttons
+        $(document.getElementsByClassName("clicked")).removeClass("clicked");
+      }
+      catch (err) {answer = null;};
+      //add points to total if answer correct
+      if (answer === 'a'){
+        totalPoints += 10;
+        document.getElementById("score").innerText = totalPoints;
+      }
+      //send update to the db (UPDATE quiz_attempt_results SET total = #newTotalPoints#)
+      $.ajax({
+        method:'POST',
+        url: `/results/${quizID}`,
+        data: totalPoints
+      })
+      //reset timer and increment question
       questionTime = 16;
       currentQuestion++;
-      document.getElementById("question").innerHTML = quiz[currentQuestion].question;
-      document.getElementById("a").innerHTML = quiz[currentQuestion].correct_answer;
-      document.getElementById("b").innerHTML = quiz[currentQuestion].incorrect_answers[0];
-      document.getElementById("c").innerHTML = quiz[currentQuestion].incorrect_answers[1];
-      document.getElementById("d").innerHTML = quiz[currentQuestion].incorrect_answers[2];
-      //dp push
-      console.log(document.getElementsByClassName("clicked")[0].id);
-      //get id of the answer picked (b)
-      //check to see if correct
-      //add points to total
-      //send update to the db (UPDATE quiz_attempt_results SET total = #newTotalPoints#)
-      //reset buttons
-      $(document.getElementsByClassName("clicked")).removeClass("clicked");
+      //check if quiz is done, if true go to results page
+      if ((currentQuestion) === quiz.length) {
+        window.location.replace(`/results/${quizID}`)
+      } else {
+        document.getElementById("quiz-length-bar-label").innerText = `${currentQuestion+1}/${quiz.length}`;
+        $(document.getElementById("quiz-length-bar")).val(currentQuestion+1);
+        document.getElementById("quiz-length-bar").max = quiz.length;
+        console.log("how long is this>",quiz.length);
+        //change question and answers
+        document.getElementById("question").innerHTML = quiz[currentQuestion].question; 
+        document.getElementById("a").innerHTML = quiz[currentQuestion].correct_answer;
+        document.getElementById("b").innerHTML = quiz[currentQuestion].incorrect_answers[0];
+        document.getElementById("c").innerHTML = quiz[currentQuestion].incorrect_answers[1];
+        document.getElementById("d").innerHTML = quiz[currentQuestion].incorrect_answers[2];
+      }
     }
   };
 
