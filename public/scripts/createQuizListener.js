@@ -1,10 +1,10 @@
 $(document).ready(function() {
   $("#create-quiz-button").on("click", function(event) {
-    event.preventDefault();
+    // event.preventDefault();
     console.log("hello")
   })
-  $.ajax({
-    method:'post',
-    url: `/quiz/create`,
-  })
+  // $.ajax({
+  //   method:'post',
+  //   url: `/quiz/create`,
+  // })
 })

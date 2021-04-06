@@ -12,21 +12,22 @@ router.get('/create', (req, res) => {
 router.post('/create', (req, res) => {
   console.log("you're in the route!")
   console.log("1111", req.body);
-  // db.query(`
-  // INSERT INTO quizzes (public, category, user_id)
-  // VALUES ($1, $2, $3)
-  // RETURNING *;
-
-  // INSERT INTO questions (question, quiz_id)
-  // VALUES ($4, $5)
-
-  // INSERT INTO answers (correct_answer, incorrect_answer, question_id)
-  // VALUES ($6, $7, $8)
-  // `, [
-  //   query.
-  // ])
+  db.query(`
+  INSERT INTO quizzes (public, category, user_id)
+  VALUES ($1, $2, $3)
+  RETURNING *;
+  `, [true, 'random', 1])
+  .then((RETURNING) => {
+    console.log(RETURNING);
+  })
 })
 
+// INSERT INTO questions (question, quiz_id)
+// VALUES ($4, $5);
+// [req.body.q1,1]
+// INSERT INTO answers (correct_answer, incorrect_answer, question_id)
+// VALUES ($6, $7, $8);
+// [ req.body.a4, [req.body.a1, req.body.a2, req.body.a3], 1]
 
 //GET /quiz/:id/data
 router.get('/:id/data', (req, res) => {
