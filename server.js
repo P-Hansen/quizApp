@@ -10,6 +10,7 @@ const sass       = require("node-sass-middleware");
 const app        = express();
 const morgan     = require('morgan');
 const cookieSession = require('cookie-session');
+app.use(bodyParser.urlencoded({ extended: true }));
 
 const profileRouter = require('./routes/profileRouter');
 const quizRouter = require('./routes/quizRouter');
@@ -22,7 +23,6 @@ const quizAPI = require('./routes/quizApiRouter');
 app.use(morgan('dev'));
 
 app.set("view engine", "ejs");
-app.use(bodyParser.urlencoded({ extended: true }));
 app.use("/styles", sass({
   src: __dirname + "/styles",
   dest: __dirname + "/public/styles",

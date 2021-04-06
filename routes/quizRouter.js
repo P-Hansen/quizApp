@@ -1,4 +1,5 @@
 const express = require('express');
+const { Pool } = require('pg');
 const router = express.Router();
 const db = require('../db/dbConnection.js');
 
@@ -7,6 +8,25 @@ router.get('/create', (req, res) => {
     const templateVars = {};
     res.render('../views/createQuiz', templateVars);
 });
+
+router.post('/create', (req, res) => {
+  console.log("you're in the route!")
+  console.log("1111", req.body);
+  // db.query(`
+  // INSERT INTO quizzes (public, category, user_id)
+  // VALUES ($1, $2, $3)
+  // RETURNING *;
+
+  // INSERT INTO questions (question, quiz_id)
+  // VALUES ($4, $5)
+
+  // INSERT INTO answers (correct_answer, incorrect_answer, question_id)
+  // VALUES ($6, $7, $8)
+  // `, [
+  //   query.
+  // ])
+})
+
 
 //GET /quiz/:id/data
 router.get('/:id/data', (req, res) => {

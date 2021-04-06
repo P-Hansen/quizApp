@@ -44,10 +44,17 @@ router.get('/', (req, res) => {
           Answer4: formattedQuestion.Answer4
         };
         res.render('../views/quizAPItest', templateVars);
-        // console.log(templateVars);
+        console.log(formattedQuestion);
         return formattedQuestion;
     });
   })
 });
+
+// router.post(/api/quizzes), (req, res) => {
+//   db.query(
+//     `INSERT INTO quizzes (public, category, user_id) VALUES ($1, $2, $3);
+//     `
+//   ), [query.category, query.question, query.];
+// }
 
 module.exports = router;
