@@ -4,6 +4,8 @@ $(document).ready(function() {
   const quizID = window.location.pathname.slice(7);
   let currentQuestion = -1;
   let questionTime = 5;
+  //INSERT INTO quiz_attempts (user_id, quiz_id) VALUES (1,1);
+  //INSERT INTO quiz_attempt_results (quiz_attempt, question_id, answer_id, total) VALUES (1,1,1,6);
 
   const questionTimer = (quiz) => {
     questionTime -= 1;
@@ -18,6 +20,11 @@ $(document).ready(function() {
       document.getElementById("d").innerHTML = quiz[currentQuestion].incorrect_answers[2];
       //dp push
       console.log(document.getElementsByClassName("clicked")[0].id);
+      //get id of the answer picked (b)
+      //check to see if correct
+      //add points to total
+      //send update to the db (UPDATE quiz_attempt_results SET total = #newTotalPoints#)
+      //reset buttons
       $(document.getElementsByClassName("clicked")).removeClass("clicked");
     }
   };

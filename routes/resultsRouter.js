@@ -35,6 +35,8 @@ router.post('/:id/delete', (req, res) => {
 
 //POST /results/ ADD
 router.post('/', (req, res) => {
+    db.query(`INSERT INTO quiz_attempts (user_id, quiz_id) VALUES (1,$1);
+  INSERT INTO quiz_attempt_results (quiz_attempt, question_id, answer_id, total) VALUES ($2,1,1,0);`, [req.params.id,1]);
 
 });
 
