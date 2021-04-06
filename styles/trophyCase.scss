@@ -7,11 +7,22 @@ body {
         display: flex;
         flex-direction: row;
         justify-content: space-evenly;
+        height: 800px;
+        text-align: center;
         #quizzes-done {
             border: 3px solid black;
+            width: 20%;
+            p {
+                background-color: cornflowerblue;
+                color: cornsilk;
+            }
         }
         #results-container {
             border: 3px solid black;
+            width: 50%;
+            h5 {
+                color: crimson;
+            }
         }
     }
 }
