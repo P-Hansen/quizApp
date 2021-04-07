@@ -34,9 +34,11 @@ router.post('/', (req, res) => {
       // this console log shows the whole user object pulled from database
       console.log("56789", user);
       req.session.user_id = user.id;
+      req.session.name = user.name;
       // another templatevars in server.js is attached to this
       const templateVars = {user_id: user.id, name: user.name}
-      return res.render('../views/index', templateVars);
+      // return res.render('../views/index', templateVars);
+      res.redirect('/');
     })
 })
 

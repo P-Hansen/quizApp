@@ -11,6 +11,7 @@ const app        = express();
 const morgan     = require('morgan');
 const cookieSession = require('cookie-session');
 app.use(bodyParser.urlencoded({ extended: true }));
+const db = require('./db/dbConnection.js');
 
 const userRouter = require('./routes/userRouter');
 const quizRouter = require('./routes/quizRouter');
@@ -56,10 +57,16 @@ app.use('/quizzes', quizAPI);
 // Home page
 // Warning: avoid creating more routes in this file!
 // Separate them into separate routes files (see above).
+
+// const getUserById = (id) => {
+//   return db.query(`SELECT * FROM users WHERE id = $1;`, [id])
+//     .then(data => data.rows[0])
+//     .catch(err => err.message);
+// };
+
 app.get("/", (req, res) => {
-  req.session.user_id = req.params.userId;
-  const templateVars = {user_id: req.session.user_id}
-  res.render("index", templateVars);
+  const templateVars = {user_id: req.session.user_id, name: req.session.name}
+  res.render("index", templateVars)
 });
 
 app.listen(PORT, () => {
