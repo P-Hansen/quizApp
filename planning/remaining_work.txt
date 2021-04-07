@@ -1,23 +1,26 @@
 Core Work -
 
 Create quizzes
-- users can make the quiz unlisted
-- Try to make the create quiz path today and log the query into the database
-- query to boolean for listed/unlisted on homepage
-- fix "name" on ejs of created quiz for answers, each answer needs to be referenced from req.body as different "answers" to insert into database correctly
+- users can make the quiz unlisted DONE April 7th
+- Try to make the create quiz path today and log the query into the database DONE April 7th
+- fix "name" on ejs of created quiz for answers, each answer needs to be referenced from req.body as different "answers" to insert into database correctly DONE April 7th
 
 Home Page
 - users can see a list of public quizzes
+- query to boolean for listed/unlisted on homepage
 
 Results Page
-- users can see a result of the recent attempt
+- users can see a result of the recent attempt DONE April 7th
 - users can share a result to the recent attempt
 
+Database
+- Hardcode database seed, api calls if we don't link to external quiz API
 
-- Can make quiz public or private, but we can put DEFAULT TRUE to public on the schema and if they check private in the create page, return that value as FALSE
+
+- Can make quiz public or private, but we can put DEFAULT TRUE to public on the schema and if they check private in the create page, return that value as FALSE DONE April 7th
 
 - Trying to get the url path after logging in to match something like  /:user_id
-	cookie storing user id
+	cookie storing user id DONE April 7th
 
 Logout button needs to post and clear cookies
 
