@@ -42,7 +42,7 @@ $(document).ready(function() {
       currentQuestion++;
       //check if quiz is done, if true go to results page
       if ((currentQuestion) === quiz.length) {
-        window.location.replace(`/results/${quizID}`)
+        window.location.replace(`/results/`);
       } else {
         document.getElementById("quiz-length-bar-label").innerText = `${currentQuestion+1}/${quiz.length}`;
         $(document.getElementById("quiz-length-bar")).val(currentQuestion+1);

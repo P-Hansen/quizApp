@@ -8,13 +8,13 @@ router.get('/live', (req, res) => {
     res.render('liveResults', templateVars);
 });
 
-//GET /results/user/quizzes READ
-router.get('/user/quizzes', (req, res) => {
-    console.log("here are the names of all the quizzes you have taken");
+//GET /results/quizzes/:id READ (userID)
+router.get('/quizzes/:id', (req, res) => {
+    console.log("here are the names of all the quizzes userID has taken", req.path.slice(9));
     db.query(`SELECT quizzes.title, quizzes.id
     FROM quizzes
     JOIN quiz_attempts ON quiz_attempts.quiz_id = quizzes.id
-    WHERE quiz_attempts.user_id = $1`, [1])
+    WHERE quiz_attempts.user_id = $1`, [req.path.slice(9)])
     .then((data)=>{
         console.log("these are the quizzes you've taken", data.rows);
         res.send(data.rows);
