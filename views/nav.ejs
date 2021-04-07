@@ -55,15 +55,16 @@
       </form>
       <ul class="nav navbar-nav navbar-right">
         <li>
+          <% if (!user_id) { %>
           <a data-toggle="dropdown" class="dropdown-toggle" href="#">Login</a>
           <ul class="dropdown-menu form-wrapper">
             <li>
               <form method= "POST" action="/login">
                 <div class="form-group">
-                  <input type="text" class="form-control" placeholder="Email" required="required">
+                  <input type="text" name="email" class="form-control" placeholder="Email" required="required">
                 </div>
                 <div class="form-group">
-                  <input type="password" class="form-control" placeholder="Password" required="required">
+                  <input type="password" name="password" class="form-control" placeholder="Password" required="required">
                 </div>
                 <input type="submit" class="btn btn-primary btn-block" value="Login">
                 <div class="form-footer">
@@ -100,6 +101,13 @@
           </ul>
         </li>
       </ul>
+      <% } %>
+      <% if (user_id) { %>
+        <div>
+          <label style="margin-right:1rem">Currently logged in as: <b><%= name %></b></label>
+          <input type="submit" class="btn btn-primary btn-block" value="Logout">
+        </div>
+      <% } %>
     </div>
   </nav>
   </body>

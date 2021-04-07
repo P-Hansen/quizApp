@@ -48,7 +48,7 @@ app.use(cookieSession({
 // app.use("/api/widgets", widgetsRoutes(db));
 
 app.use('/quiz', quizRouter);
-app.use('/profile', userRouter);
+app.use('/login', userRouter);
 app.use('/results', resultsRouter);
 app.use('/quizzes', quizAPI);
 
@@ -58,7 +58,8 @@ app.use('/quizzes', quizAPI);
 // Separate them into separate routes files (see above).
 app.get("/", (req, res) => {
   req.session.user_id = req.params.userId;
-  res.render("index");
+  const templateVars = {user_id: req.session.user_id}
+  res.render("index", templateVars);
 });
 
 app.listen(PORT, () => {
