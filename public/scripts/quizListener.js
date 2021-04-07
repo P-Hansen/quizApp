@@ -73,16 +73,7 @@ $(document).ready(function() {
   };
   getQuiz(quizID);
 
-  // db.query(`SELECT questions.*, answers.*
-  // FROM quizzes
-  // JOIN questions ON quizzes.id = questions.quiz_id
-  // JOIN answers ON questions.id = answers.question_id
-  // WHERE quizzes.id = $1;`, [quizID])
-  // then((quiz)=>{
-  //   let myVar = setInterval(questionTimer(quiz), 1000);
-  // })
-
-    //clicking the write a new tweet slides the compose section down
+  //adds a class to the selected answer
   $("button").on("click", function(event) {
       event.preventDefault();
       $(this).parent().children().removeClass("clicked");

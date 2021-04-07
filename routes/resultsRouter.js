@@ -11,19 +11,14 @@ router.get('/live', (req, res) => {
 //GET /results/:id READ
 router.get('/:id', (req, res) => {
     console.log("and now for results!")
-//     db.query(`SELECT questions.*, answers.*
-//     FROM quizzes
-//     JOIN questions ON quizzes.id = questions.quiz_id
-//     JOIN answers ON questions.id = answers.question_id
-//     WHERE quizzes.id = $1;`, [req.params.id])
-//   .then((result)=>{
-//     res.send(result.rows);
-//   })
-//   .catch((err)=>{
-//     console.log(err.message);
-//   })
-    const templateVars = {};
-    res.render('trophyCase', templateVars);
+    db.query(`SELECT quiz_attempt_results.total
+    FROM quiz_attempt_results
+    JOIN quiz_attempts ON quiz_attempts.id = quiz_attempt_results.quiz_attempt_id
+    WHERE quiz_attempts.user_id = $1`, [1])
+    .then((data)=>{
+        console.log("these are the quizzes you've taken", data.rows);
+        res.send(data.rows);
+    });
 });
 
 //POST /results/:id EDIT
@@ -47,7 +42,7 @@ router.post('/', (req, res) => {
 
 //GET /results/ BROWSE
 router.get('/', (req, res) => {
-    const templateVars = {};
+    const templateVars = {user_id: req.session.user_id, name: req.session.name,};
     res.render('trophyCase', templateVars);
 });
 
