@@ -11,21 +11,27 @@ router.get('/create', (req, res) => {
 router.post('/create', (req, res) => {
   // will probably need to add some type of user_id to this field at some point
   console.log("you're in the route!")
+  let quizID = '';
+  let questionID = ''; //maybe call it currentQuesitionID
   console.log("1111", req.body);
   db.query(`
   INSERT INTO quizzes (public, title, category, user_id)
   VALUES ($1, $2, $3, $4)
   RETURNING id;
-  `, [true, '123', 'user_created', 1])
-  // this true value needs to change to false if the checkbox is ticked
+  `, [req.body.public, req.body.title, 'user_created', 1]) //quiz created
+  .then((qqq) => {
+    quizID = qqq;
+    return quizID; //global quiz id varirable created
+  })
   .then((quiz) => {
+    console.log("Line 27", quiz)
     quizID = quiz.rows[0].id;
     console.log("QUIZID", quizID)
     db.query(`
     INSERT INTO questions (question, quiz_id)
     VALUES ($1, $2)
     RETURNING id;
-    `, [req.body.q1, quizID])
+    `, [req.body.q1, quizID]) // Question 1 created
     .then((question) => {
       questionID = question.rows[0].id;
       console.log("QUESTIONID", questionID)
@@ -33,32 +39,95 @@ router.post('/create', (req, res) => {
       INSERT INTO answers (correct_answer, incorrect_answers, question_id)
       VALUES ($1, $2, $3)
       RETURNING *;
-      `, [req.body.q1a1, [req.body.q1a2, req.body.q1a3, req.body.q1a4], questionID])
-      //how do I properly reference the question_id to increase incrementally in database properly
+      `, [req.body.q1a1, [req.body.q1a2, req.body.q1a3, req.body.q1a4], questionID]) // Q1 Answer created
       .then(() => {
-        // this should redirect to a page showing the created quiz
-        res.redirect('/');
+        console.log("QUIZID22222", quizID)
+        db.query(`
+        INSERT INTO questions (question, quiz_id)
+        VALUES ($1, $2)
+        RETURNING id;
+        `, [req.body.q2, quizID]) // Question 2 created
+        .then((question2) => {
+          questionID = question2.rows[0].id
+          return questionID; //question id from last question created (Question 2)
+        })
+        .then(() => {
+          console.log("QUESTIONID2222", questionID)
+          db.query(`
+          INSERT INTO answers (correct_answer, incorrect_answers, question_id)
+          VALUES ($1, $2, $3)
+          RETURNING *;
+          `, [req.body.q2a1, [req.body.q2a2, req.body.q2a3, req.body.q2a4], questionID]) // Q2 Answer created
+          .then(() => {
+            console.log("QUIZID3333", quizID)
+            db.query(`
+            INSERT INTO questions (question, quiz_id)
+            VALUES ($1, $2)
+            RETURNING id;
+            `, [req.body.q3, quizID]) // Question 3 created
+            .then((question3) => {
+              questionID = question3.rows[0].id
+              return questionID; //question id from last question created (Question 3)
+            })
+            .then(() => {
+              console.log("QUESTIONID33333", questionID)
+              db.query(`
+              INSERT INTO answers (correct_answer, incorrect_answers, question_id)
+              VALUES ($1, $2, $3)
+              RETURNING *;
+              `, [req.body.q3a1, [req.body.q3a2, req.body.q3a3, req.body.q3a4], questionID]) // Q3 Answer created
+              .then(() => {
+                console.log("QUIZID44444", quizID)
+                db.query(`
+                INSERT INTO questions (question, quiz_id)
+                VALUES ($1, $2)
+                RETURNING id;
+                `, [req.body.q4, quizID]) // Question 4 created
+                .then((question4) => {
+                  questionID = question4.rows[0].id
+                  return questionID; //question id from last question created (Question 4)
+                })
+                .then(() => {
+                  console.log("QUESTIONID33333", questionID)
+                  db.query(`
+                  INSERT INTO answers (correct_answer, incorrect_answers, question_id)
+                  VALUES ($1, $2, $3)
+                  RETURNING *;
+                  `, [req.body.q4a1, [req.body.q4a2, req.body.q4a3, req.body.q4a4], questionID]) // Q4 Answer created
+                  .then(() => {
+                    console.log("QUIZID5555", quizID)
+                    db.query(`
+                    INSERT INTO questions (question, quiz_id)
+                    VALUES ($1, $2)
+                    RETURNING id;
+                    `, [req.body.q5, quizID]) // Question 5 created
+                    .then((question5) => {
+                      questionID = question5.rows[0].id
+                      return questionID; //question id from last question created (Question 5)
+                    })
+                    .then(() => {
+                      console.log("QUESTIONID33333", questionID)
+                      db.query(`
+                      INSERT INTO answers (correct_answer, incorrect_answers, question_id)
+                      VALUES ($1, $2, $3)
+                      RETURNING *;
+                      `, [req.body.q5a1, [req.body.q5a2, req.body.q5a3, req.body.q5a4], questionID]) // Q5 Answer created
+                      .then(() => {
+                        // this should redirect to a page showing the created quiz
+                        res.redirect('/');
+                      })
+                    })
+                  })
+                })
+              })
+            })
+          })
+        })
       })
     })
   })
 })
 
-// router.post('/create', (req, res) => { // will probably need to add some type of user_id to this field at some point
-//   let query = `
-//   INSERT INTO questions (question, quiz_id)
-//   VALUES ($1, $2)
-//   RETURNING *;
-// `;
-//   let values = [req.body.question];
-
-// })
-
-// INSERT INTO questions (question, quiz_id)
-// VALUES ($4, $5);
-// [req.body.q1,1]
-// INSERT INTO answers (correct_answer, incorrect_answer, question_id)
-// VALUES ($6, $7, $8);
-// [ req.body.a4, [req.body.a1, req.body.a2, req.body.a3], 1]
 
 //GET /quiz/:id/data
 router.get('/:id/data', (req, res) => {
