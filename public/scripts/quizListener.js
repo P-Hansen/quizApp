@@ -42,7 +42,7 @@ $(document).ready(function() {
       currentQuestion++;
       //check if quiz is done, if true go to results page
       if ((currentQuestion) === quiz.length) {
-        window.location.replace(`/results/${quizID}`)
+        window.location.replace(`/results/`);
       } else {
         document.getElementById("quiz-length-bar-label").innerText = `${currentQuestion+1}/${quiz.length}`;
         $(document.getElementById("quiz-length-bar")).val(currentQuestion+1);
@@ -73,16 +73,7 @@ $(document).ready(function() {
   };
   getQuiz(quizID);
 
-  // db.query(`SELECT questions.*, answers.*
-  // FROM quizzes
-  // JOIN questions ON quizzes.id = questions.quiz_id
-  // JOIN answers ON questions.id = answers.question_id
-  // WHERE quizzes.id = $1;`, [quizID])
-  // then((quiz)=>{
-  //   let myVar = setInterval(questionTimer(quiz), 1000);
-  // })
-
-    //clicking the write a new tweet slides the compose section down
+  //adds a class to the selected answer
   $("button").on("click", function(event) {
       event.preventDefault();
       $(this).parent().children().removeClass("clicked");

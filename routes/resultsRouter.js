@@ -8,22 +8,43 @@ router.get('/live', (req, res) => {
     res.render('liveResults', templateVars);
 });
 
+//GET /results/quizzes/:id READ (userID)
+router.get('/quizzes/:id', (req, res) => {
+    console.log("here are the names of all the quizzes userID has taken", req.path.slice(9));
+    db.query(`SELECT quizzes.title, quizzes.id
+    FROM quizzes
+    JOIN quiz_attempts ON quiz_attempts.quiz_id = quizzes.id
+    WHERE quiz_attempts.user_id = $1`, [req.path.slice(9)])
+    .then((data)=>{
+        console.log("these are the quizzes you've taken", data.rows);
+        res.send(data.rows);
+    });
+});
+
+//GET /results/all READ
+router.get('/all', (req, res) => {
+    console.log("and now for results!")
+    db.query(`SELECT quizzes.title, quiz_attempt_results.total
+    FROM quiz_attempt_results
+    JOIN quiz_attempts ON quiz_attempts.id = quiz_attempt_results.quiz_attempt_id
+    JOIN quizzes ON quizzes.id = quiz_attempts.quiz_id
+    WHERE quiz_attempts.user_id = $1`, [1])
+    .then((data)=>{
+        console.log("these are the quizzes you've taken", data.rows);
+        res.send(data.rows);
+    });
+});
+
 //GET /results/:id READ
 router.get('/:id', (req, res) => {
-    console.log("and now for results!")
-//     db.query(`SELECT questions.*, answers.*
-//     FROM quizzes
-//     JOIN questions ON quizzes.id = questions.quiz_id
-//     JOIN answers ON questions.id = answers.question_id
-//     WHERE quizzes.id = $1;`, [req.params.id])
-//   .then((result)=>{
-//     res.send(result.rows);
-//   })
-//   .catch((err)=>{
-//     console.log(err.message);
-//   })
-    const templateVars = {};
-    res.render('trophyCase', templateVars);
+    db.query(`SELECT quizzes.title, quiz_attempt_results.total
+    FROM quizzes
+    JOIN quiz_attempts ON quiz_attempts.quiz_id = quizzes.id
+    JOIN quiz_attempt_results ON quiz_attempt_results.quiz_attempt_id = quiz_attempts.id
+    WHERE quiz_attempts.user_id = $1 AND quizzes.id = $2`, [1, req.path.slice(1)])
+    .then((data)=>{
+        res.send(data.rows);
+    });
 });
 
 //POST /results/:id EDIT
@@ -47,7 +68,7 @@ router.post('/', (req, res) => {
 
 //GET /results/ BROWSE
 router.get('/', (req, res) => {
-    const templateVars = {};
+    const templateVars = {user_id: req.session.user_id, name: req.session.name,};
     res.render('trophyCase', templateVars);
 });
 

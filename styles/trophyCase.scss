@@ -17,12 +17,21 @@ body {
                 color: cornsilk;
             }
         }
-        #results-container {
-            border: 3px solid black;
+        #results-box {
             width: 50%;
+            border: 3px solid black;
             h5 {
                 color: crimson;
             }
+            #results-container {
+                height: 800px;
+            }
         }
     }
+}
+
+.clicked{
+    background-color: rgb(224, 173, 64) !important;
+    border: 10;
+    border-color: floralwhite;
 }
