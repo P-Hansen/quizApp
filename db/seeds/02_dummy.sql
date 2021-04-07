@@ -21,4 +21,4 @@ INSERT INTO quiz_attempts (user_id, quiz_id) VALUES (1,1);
 INSERT INTO quiz_attempts (user_id, quiz_id) VALUES (1,2);
 
 INSERT INTO quiz_attempt_results (quiz_attempt_id, question_id, answer_id, total) VALUES (1,1,1,6);
-INSERT INTO quiz_attempt_results (quiz_attempt_id, question_id, answer_id, total) VALUES (1,1,1,10);
+INSERT INTO quiz_attempt_results (quiz_attempt_id, question_id, answer_id, total) VALUES (2,1,1,10);
