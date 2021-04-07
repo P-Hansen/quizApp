@@ -8,13 +8,28 @@ router.get('/live', (req, res) => {
     res.render('liveResults', templateVars);
 });
 
-//GET /results/:id READ
-router.get('/:id', (req, res) => {
+//GET /results/all READ
+router.get('/all', (req, res) => {
     console.log("and now for results!")
-    db.query(`SELECT quiz_attempt_results.total
+    db.query(`SELECT quizzes.title, quiz_attempt_results.total
     FROM quiz_attempt_results
     JOIN quiz_attempts ON quiz_attempts.id = quiz_attempt_results.quiz_attempt_id
+    JOIN quizzes ON quizzes.id = quiz_attempts.quiz_id
     WHERE quiz_attempts.user_id = $1`, [1])
+    .then((data)=>{
+        console.log("these are the quizzes you've taken", data.rows);
+        res.send(data.rows);
+    });
+});
+
+//GET /results/:id READ
+router.get('/:id', (req, res) => {
+    console.log("and now for results of quiz #", req.path.slice(1))
+    db.query(`SELECT quizzes.title, quiz_attempt_results.total
+    FROM quiz_attempt_results
+    JOIN quiz_attempts ON quiz_attempts.id = quiz_attempt_results.quiz_attempt_id
+    JOIN quizzes ON quizzes.id = quiz_attempts.quiz_id
+    WHERE quiz_attempts.user_id = $1 AND quizzes.id = $2`, [1, req.path.slice(1)])
     .then((data)=>{
         console.log("these are the quizzes you've taken", data.rows);
         res.send(data.rows);
