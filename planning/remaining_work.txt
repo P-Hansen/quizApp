@@ -19,7 +19,7 @@ Results Page
 - Trying to get the url path after logging in to match something like  /:user_id
 	cookie storing user id
 
-
+Logout button needs to post and clear cookies
 
 Stretch Work -
 

@@ -17,7 +17,7 @@ router.post('/create', (req, res) => {
   VALUES ($1, $2, $3, $4)
   RETURNING id;
   `, [true, '123', 'user_created', 1])
-  // Does public always default to true? Maybe change 'random' to user created? Unless we specify and allow users to choose a category//
+  // this true value needs to change to false if the checkbox is ticked
   .then((quiz) => {
     quizID = quiz.rows[0].id;
     console.log("QUIZID", quizID)
@@ -33,7 +33,7 @@ router.post('/create', (req, res) => {
       INSERT INTO answers (correct_answer, incorrect_answers, question_id)
       VALUES ($1, $2, $3)
       RETURNING *;
-      `, [req.body.a1, [req.body.a2, req.body.a3, req.body.a4], questionID])
+      `, [req.body.q1a1, [req.body.q1a2, req.body.q1a3, req.body.q1a4], questionID])
       //how do I properly reference the question_id to increase incrementally in database properly
       .then(() => {
         // this should redirect to a page showing the created quiz
