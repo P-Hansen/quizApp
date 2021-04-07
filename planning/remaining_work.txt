@@ -4,6 +4,7 @@ Create quizzes
 - users can make the quiz unlisted
 - Try to make the create quiz path today and log the query into the database
 - query to boolean for listed/unlisted on homepage
+- fix "name" on ejs of created quiz for answers, each answer needs to be referenced from req.body as different "answers" to insert into database correctly
 
 Home Page
 - users can see a list of public quizzes
@@ -23,3 +24,6 @@ Results Page
 Stretch Work -
 
 add functionality for search bar to search for categories of quizzes?
+see if we can get the quiz api to pull into the database
+	- if not, hardcode quizzes into database ourselves
+created category field in create quiz page, and possibly make default of category "user_created" if no category is specified
