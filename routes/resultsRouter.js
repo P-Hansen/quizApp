@@ -50,7 +50,8 @@ router.get('/:id', (req, res) => {
 //POST /results/:id EDIT
 router.post('/:id', (req, res) => {
     console.log("total score updated to", req.body.totalPoints, "attempt number", req.body.attemptNumber);
-    db.query(`UPDATE quiz_attempt_results SET total = $1
+    db.query(`UPDATE quiz_attempt_results
+    SET total = $1
     WHERE quiz_attempt_id = $2;`, [req.body.totalPoints, req.body.attemptNumber]);
 });
 
@@ -67,7 +68,7 @@ router.post('/', (req, res) => {
     .then((attempID)=>{
         console.log("wtf is this?", attempID.rows[0].id);
         db.query(`INSERT INTO quiz_attempt_results (quiz_attempt_id, question_id, answer_id, total) VALUES ($1,1,1,0);`, [attempID.rows[0].id]);
-        return attempID;
+        res.send(attempID);
     });
     
 });

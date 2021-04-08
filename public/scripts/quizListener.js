@@ -15,9 +15,9 @@ $(document).ready(function() {
     data: {quizID}
   })
   .then((data)=>{
-    console.log("This is the number of the attempt", data);
-    attemptNumber = data;
-  })
+    console.log("This is the number of the attempt", data.rows[0].id);
+    attemptNumber = data.rows[0].id;
+  });
 
   const questionTimer = (quiz) => {
     questionTime -= 1;
