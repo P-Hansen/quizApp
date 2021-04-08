@@ -72,6 +72,7 @@ router.post('/:id', (req, res) => {
     db.query(`UPDATE quiz_attempt_results
     SET total = $1
     WHERE quiz_attempt_id = $2;`, [req.body.totalPoints, req.body.attemptNumber]);
+    res.end();
 });
 
 //POST /results/ DELETE

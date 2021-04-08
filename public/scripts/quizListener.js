@@ -48,7 +48,19 @@ $(document).ready(function() {
       currentQuestion++;
       //check if quiz is done, if true go to results page
       if ((currentQuestion) === quiz.length) {
-        window.location.replace(`/results/`);
+        // one last score update before results page
+        $.ajax({
+          method:'POST',
+          url: `/results/${quizID}`,
+          data: {totalPoints, attemptNumber}
+        })
+        .then(()=>{
+          console.log("go! be free!");
+          window.location.href = `/results/${attemptNumber}`;
+        })
+
+        // window.location.href = `/results/${attemptNumber}`;
+        //window.location.replace(`/results/${attemptNumber}`);
       } else {
         document.getElementById("quiz-length-bar-label").innerText = `${currentQuestion+1}/${quiz.length}`;
         $(document.getElementById("quiz-length-bar")).val(currentQuestion+1);
