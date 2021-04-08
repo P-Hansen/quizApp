@@ -3,14 +3,20 @@
 $(document).ready(function() {
   $(document.getElementById("questions-box")).hide();
   const quizID = window.location.pathname.slice(7);
+  console.log("is this a string somehow?", quizID);
   let currentQuestion = -1;
   let questionTime = 5;
   let totalPoints = 0;
   let answer = null;
+  let attemptNumber = 0;
   $.ajax({
     method:'POST',
     url: `/results`,
     data: {quizID}
+  })
+  .then((data)=>{
+    console.log("This is the number of the attempt", data);
+    attemptNumber = data;
   })
 
   const questionTimer = (quiz) => {
@@ -34,7 +40,7 @@ $(document).ready(function() {
         $.ajax({
           method:'POST',
           url: `/results/${quizID}`,
-          data: {totalPoints}
+          data: {totalPoints, attemptNumber}
         });
       };
       //reset timer and increment question

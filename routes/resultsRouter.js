@@ -49,9 +49,9 @@ router.get('/:id', (req, res) => {
 
 //POST /results/:id EDIT
 router.post('/:id', (req, res) => {
-    console.log("total score updated to", req.body.totalPoints);
+    console.log("total score updated to", req.body.totalPoints, "attempt number", req.body.attemptNumber);
     db.query(`UPDATE quiz_attempt_results SET total = $1
-    WHERE quiz_attempt = $2;`, [req.body.totalPoints, 1]);
+    WHERE quiz_attempt_id = $2;`, [req.body.totalPoints, req.body.attemptNumber]);
 });
 
 //POST /results/ DELETE
@@ -61,9 +61,15 @@ router.post('/:id/delete', (req, res) => {
 
 //POST /results/ ADD
 router.post('/', (req, res) => {
-    console.log("you have started this quiz",req.body.quizID);
-    db.query(`INSERT INTO quiz_attempts (user_id, quiz_id) VALUES (1,$1);`, [req.body.quizID]);
-    db.query(`INSERT INTO quiz_attempt_results (quiz_attempt, question_id, answer_id, total) VALUES ($1,1,1,0);`, [1]);
+    console.log("you have started this quiz", req.body.quizID);
+    db.query(`INSERT INTO quiz_attempts (user_id, quiz_id) VALUES (1,$1)
+    RETURNING quiz_attempts.id`, [req.body.quizID])
+    .then((attempID)=>{
+        console.log("wtf is this?", attempID.rows[0].id);
+        db.query(`INSERT INTO quiz_attempt_results (quiz_attempt_id, question_id, answer_id, total) VALUES ($1,1,1,0);`, [attempID.rows[0].id]);
+        return attempID;
+    });
+    
 });
 
 //GET /results/ BROWSE
