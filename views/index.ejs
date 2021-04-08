@@ -4,20 +4,132 @@
     <title>Home Page</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <link rel="stylesheet" href="/styles/index.css" type="text/css" />
     <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
     <link rel="stylesheet" href="/vendor/border-box.css" type="text/css" />
     <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
 
     <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
     <script type="text/javascript" src="/scripts/app.js"></script>
-
+    <script type="text/javascript" src="/scripts/indexListener.js"></script>
 
   </head>
 
   <body>
     <header>
       <%- include('./nav') %>
-    </header>
-    <h1>Hello World!</h1>
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="row">
+              <div class="col-md-6">
+                <h2>
+                  My Quizzes
+                </h2>
+                <p>
+                  Here's a list of quizzes made by you!
+                </p>
+                <!-- <p>
+                  <a class="btn" href="#">View details »</a>
+                </p> -->
+                <table class="table" id="user-quizzes">
+                  <thead>
+                    <tr>
+                      <th>
+                        #
+                      </th>
+                      <th>
+                        Name of Quiz
+                      </th>
+                      <th>
+                        Category of Quiz
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td id="user-quiz-id-number">
+                      </td>
+                      <td id="user-name-of-quiz">
+                      </td>
+                      <td id="user-category-of-quiz">
+                      </td>
+                    </tr>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="col-md-6">
+                <h2>
+                  Public Quizzes
+                </h2>
+                <p>
+                  Here's a list of quizzes made by anyone!
+                </p>
+                <table class="table" id="private-quizzes">
+                  <thead>
+                    <tr>
+                      <th>
+                        #
+                      </th>
+                      <th>
+                        Name of Quiz
+                      </th>
+                      <th>
+                        Category of Quiz
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td id="public-quiz-id-number">
+                      </td>
+                      <td id="public-name-of-quiz">
+                      </td>
+                      <td id="public-category-of-quiz">
+                      </td>
+                    </tr>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="col-md-6">
+                <h2>
+                  User's Private Quizzes
+                </h2>
+                <p>
+                  Here's a list of quizzes you've chosen to not make Public (yet)!
+                </p>
+                <table class="table" id="user-private-quizzes">
+                  <thead>
+                    <tr>
+                      <th>
+                        #
+                      </th>
+                      <th>
+                        Name of Quiz
+                      </th>
+                      <th>
+                        Category of Quiz
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td id="user-private-quiz-id-number">
+                      </td>
+                      <td id="user-private-name-of-quiz">
+                      </td>
+                      <td id="user-private-cat-of-quiz">
+                      </td>
+                    </tr>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
   </body>
 </html>

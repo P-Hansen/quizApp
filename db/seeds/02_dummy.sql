@@ -4,6 +4,14 @@ INSERT INTO users (name, password, email) VALUES ('Terry', 'password', 'terry@ho
 
 INSERT INTO quizzes (public, title, category, user_id) VALUES (true, 'Movies', 'movies', 1);
 INSERT INTO quizzes (public, title, category, user_id) VALUES (true, 'Video Games', 'video game', 2);
+-- delete these quizzes afterwards, only for making my quizzes table
+INSERT INTO quizzes (public, title, category, user_id) VALUES (true, 'Mario Adventure', 'video game', 1);
+INSERT INTO quizzes (public, title, category, user_id) VALUES (true, 'Valorant Agents', 'video game', 2);
+INSERT INTO quizzes (public, title, category, user_id) VALUES (true, 'Oscar Nominations', 'movies', 1);
+INSERT INTO quizzes (public, title, category, user_id) VALUES (true, 'Overwatch Lore', 'video game', 2);
+INSERT INTO quizzes (public, title, category, user_id) VALUES (false, 'Lighthouse Labs', 'Technology', 1);
+INSERT INTO quizzes (public, title, category, user_id) VALUES (false, 'Building a Gaming PC', 'Technology', 1);
+
 
 INSERT INTO questions (question, quiz_id) VALUES ('who played neo in the matrix?', 1);
 INSERT INTO questions (question, quiz_id) VALUES ('what was the highest gossing movie of 2020?', 1);

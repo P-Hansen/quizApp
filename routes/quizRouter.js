@@ -2,6 +2,48 @@ const express = require('express');
 const router = express.Router();
 const db = require('../db/dbConnection.js');
 
+
+//GET all quizzes made by user that are PRIVATE
+router.get('/all/user/private', (req, res) => {
+  console.log("private quizzes", req.session.user_id)
+  db.query(
+    `SELECT quizzes.title, quizzes.category, quizzes.id
+    FROM quizzes
+    WHERE quizzes.public = false
+    `)
+    .then((data) => {
+      console.log("User Private Quizzes", data.rows);
+      res.send(data.rows);
+    })
+})
+
+//GET all quizzes made by user
+router.get('/all/user', (req, res) => {
+  console.log("999999", req.session.user_id)
+  db.query(
+    `SELECT quizzes.title, quizzes.category, quizzes.id
+    FROM quizzes
+    WHERE quizzes.user_id = 1;
+    `)
+    .then((data) => {
+      console.log("User Quizzes", data.rows);
+      res.send(data.rows);
+    })
+});
+
+//GET all public quizzes
+router.get('/all/public', (req, res) => {
+  db.query(
+  `SELECT quizzes.title, quizzes.category, quizzes.id
+  FROM quizzes
+  WHERE quizzes.public = true;
+  `)
+  .then((data)=>{
+      console.log("All public quizzes!", data.rows);
+      res.send(data.rows);
+  });
+});
+
 //GET /quiz/create
 router.get('/create', (req, res) => {
   const templateVars = {user_id: req.session.user_id, name: req.session.name}
@@ -151,6 +193,7 @@ router.get('/:id', (req, res) => {
     res.render('takeQuiz', templateVars);
 });
 
+
 //get the public quizzes
 router.get("/", (req, res) => {
     db.query(`SELECT * FROM quizzes;`)
@@ -164,5 +207,6 @@ router.get("/", (req, res) => {
         .json({ error: err.message });
     });
 });
+
 
 module.exports = router;

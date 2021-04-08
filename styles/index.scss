@@ -1,0 +1,31 @@
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  gap: 0px 0px;
+  grid-template-areas:
+    "My-Quizzes My-Quizzes Public-Quizzes Public-Quizzes"
+    "My-Quizzes My-Quizzes Public-Quizzes Public-Quizzes"
+    "My-Quizzes My-Quizzes User-Made-Quizzes User-Made-Quizzes"
+    "My-Quizzes My-Quizzes User-Made-Quizzes User-Made-Quizzes";
+}
+.My-Quizzes {
+  grid-area: My-Quizzes;
+  display: flex;
+  border-color: black;
+}
+
+.Public-Quizzes {
+  grid-area: Public-Quizzes;
+  display: flex;
+  border-color: black;
+}
+
+.User-Made-Quizzes {
+  grid-area: User-Made-Quizzes;
+  display: flex;
+  border-color: black;
+}
+
+* {box-sizing:border-box}
+
