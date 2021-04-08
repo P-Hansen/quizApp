@@ -2,19 +2,21 @@
 $(document).ready(function() {
     const user_id = 1;
     //fill main box with all time results by defult
-    $.ajax({
-        method:'GET',
-        url: `/results/all`
-      })
-      .then((data)=>{
-        for (const record in data) {
-            $(document.getElementById("results-container")).append(data[record].title);
-            $(document.getElementById("results-container")).append('<br>');
-            $(document.getElementById("results-container")).append(data[record].total);
-            $(document.getElementById("results-container")).append('<br>');
-        };
-        $(document.getElementById("all-time")).addClass("clicked");
-      });
+    if(!document.getElementById("flag")) {
+      $.ajax({
+          method:'GET',
+          url: `/results/all`
+        })
+        .then((data)=>{
+          for (const record in data) {
+              $(document.getElementById("results-container")).append(data[record].title);
+              $(document.getElementById("results-container")).append('<br>');
+              $(document.getElementById("results-container")).append(data[record].total);
+              $(document.getElementById("results-container")).append('<br>');
+          };
+          $(document.getElementById("all-time")).addClass("clicked");
+        });
+    }
       //populate the menu box with all quizzes taken
       $.ajax({
         method:'GET',
@@ -33,7 +35,7 @@ $(document).ready(function() {
             let quizNumber = $(this)[0].getAttribute('data');
             $.ajax({
                 method:'GET',
-                url: `/results/${quizNumber}`
+                url: `/results/api/${quizNumber}`
             })
             .then((data)=>{
                 for (const record in data) {

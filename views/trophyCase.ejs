@@ -28,6 +28,10 @@
     <div id="results-box">
       <h5>RESULTS</h5>
       <div id="results-container">
+        <% if (locals.results) { %>
+          <p id="flag"><%=locals.results.title%></p>
+          <p><%=locals.results.total%></p>
+          <% } %>
       </div>
     </div>
   </div>
