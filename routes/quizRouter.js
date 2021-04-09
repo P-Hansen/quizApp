@@ -187,7 +187,7 @@ router.post('/create', (req, res) => {
 //GET /quiz/:id/data
 router.get('/:id/data', (req, res) => {
   db.query(`
-  SELECT questions.*, answers.*
+  SELECT questions.*, answers.*, quizzes.title
   FROM quizzes
   JOIN questions ON quizzes.id = questions.quiz_id
   JOIN answers ON questions.id = answers.question_id

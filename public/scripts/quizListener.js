@@ -62,6 +62,7 @@ $(document).ready(function() {
         // window.location.href = `/results/${attemptNumber}`;
         //window.location.replace(`/results/${attemptNumber}`);
       } else {
+        document.getElementById("title").innerText = quiz[0].title;
         document.getElementById("quiz-length-bar-label").innerText = `${currentQuestion+1}/${quiz.length}`;
         $(document.getElementById("quiz-length-bar")).val(currentQuestion+1);
         document.getElementById("quiz-length-bar").max = quiz.length;
