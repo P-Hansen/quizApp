@@ -1,5 +1,8 @@
-1-I've got a problem Phil, my friends are huge nerds but how do we decide
-1-who is our king?
+Caden - 1
+Phil - 2
+
+1-I've got a problem Phil, my friends are huge nerds but how do we decide (START ON HOME PAGE NOT LOGGED IN)
+1-who's the smartest?
 
 	2-Don't worry Caden introducing QuiZapp the Quiz app!
 	2-Movies, sports, history, games, it has it all
@@ -11,7 +14,7 @@
 
 1-but what if I want to create my own quizzes?
 
-	2-just log in at the top and let's get started!
+	2-just log in at the top and let's get started! (LOGIN WITH caden@choi.ca)
 
 	2-once you log in you can see all the quizzes you've made
 	2-down here are all the quizzes you've made private
@@ -20,19 +23,52 @@
 1-what's that one down there? is that a Lighthouse labs quiz?
 
 	2-let's check it out!
-	2-ok everone open you're mics so you can shout out the answers and let's see how we do
+	2-ok everyone open you're mics so you can shout out the answers and let's see how we do
 
-1-I guess after 6 weeks we know a lot about Lighthouse labs
+1-I guess after 6 weeks we know a lot about Lighthouse labs (after the quiz is done)
 
 	2-you can even share your score with the link at the top
 
 1-that was fun but I want to create my own quiz
 
 	2-sure thing just click create quiz at the top
-	2-what catagorie should our quiz be?
-	2-**get answers from audience**
+	2-what category should our quiz be?
+	2-**get answers from audience** I THINK I HEARD MUSIC!!!
 
 1-** get answers from audience**
+Questions:
+
+----- Which Playlist is Best for Coding?
+----- Low-Fi Beats With The Girl
+Loud Music Playlist
+8 Hours of the Worst Music You Could Possibly Think Of...
+Oops I Did It Again on repeat... forever
+
+
+----- Which 2016 song by The Weeknd features Daft Punk?
+----- Starboy
+No Flex Zone
+Dancing Queen
+Peaches
+
+----- What is Coachella?
+----- Music Festival
+Sports Festival
+Festival for Wind Instruments
+Not Important
+
+----- Who sings the song for the meme getting "Rick Rolled"
+----- Rick Astley
+Bon Jovi
+Madonna
+Tupac
+
+----- What is KPOP?
+----- Korean Pop
+Kool Pop
+Knowledgeable Pop
+When You Dislocate Your Knee, it goes POP
+
 
 --click create quiz--
 

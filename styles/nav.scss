@@ -36,6 +36,7 @@ body {
   font-size: 20px;
   padding-right: 0;
   color: white;
+
 }
 .navbar .navbar-brand b {
   font-weight: bold;
@@ -50,29 +51,7 @@ body {
 .navbar .nav li a {
   color: white;
 }
-.search-box {
-      position: relative;
-  }
-  .search-box input {
-      padding-right: 35px;
-  border-color: #dfe3e8;
-      border-radius: 4px !important;
-  box-shadow: none
-  }
-.search-box .input-group-addon {
-      min-width: 35px;
-      border: none;
-      background: transparent;
-      position: absolute;
-      right: 0;
-      z-index: 9;
-      padding: 7px;
-  height: 100%;
-  }
-  .search-box i {
-      color: #a0a5b1;
-  font-size: 19px;
-  }
+
 .navbar .nav .btn-primary, .navbar .nav .btn-primary:active {
   color: #303C6C;
   background: #FDC500;
@@ -84,7 +63,6 @@ body {
 .navbar .nav .btn-primary:hover, .navbar .nav .btn-primary:focus {
   color: #303C6C;
   outline: none;
-  background: #31bfb1;
 }
 .navbar .navbar-right li:first-child a {
   padding-right: 30px;
@@ -106,7 +84,7 @@ body {
 }
 .navbar ul.nav li.open > a.get-started-btn {
   color: #303C6C;
-  background: #31bfb1 !important;
+  background: #FDC500 !important;
 }
 .navbar .dropdown-menu {
   border-radius: 1px;
@@ -118,7 +96,6 @@ body {
   font-weight: normal;
 }
 .navbar .nav .dropdown-menu li a, .navbar .nav .dropdown-menu li a:hover, .navbar .nav .dropdown-menu li a:focus {
-  // padding: 8px 20px;
   line-height: normal;
 }
 .navbar .navbar-form {
@@ -132,7 +109,7 @@ body {
       font-size: 14px;
 }
 .navbar .dropdown-menu.form-wrapper a {
-  color: #33cabb;
+  color: #FDC500;
   padding: 0 !important;
 }
 .navbar .dropdown-menu.form-wrapper a:hover{
@@ -151,6 +128,7 @@ body {
 }
 .navbar .form-wrapper .form-footer a:hover{
   text-decoration: underline;
+  color: #FDC500;
 }
 .navbar .form-wrapper .checkbox-inline input {
   margin-top: 3px;
