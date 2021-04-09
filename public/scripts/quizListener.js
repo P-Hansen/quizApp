@@ -95,7 +95,7 @@ $(document).ready(function() {
           event.preventDefault();
           $(this).parent().children().removeClass("clicked");
           $(this).addClass("clicked");
-      });
+        });
       }
     }
   };
