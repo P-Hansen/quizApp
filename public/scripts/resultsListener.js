@@ -11,7 +11,7 @@ $(document).ready(function() {
           for (const record in data) {
               $(document.getElementById("results-container")).append(data[record].title);
               $(document.getElementById("results-container")).append('<br>');
-              $(document.getElementById("results-container")).append(data[record].total);
+              $(document.getElementById("results-container")).append(`${data[record].total}/50`);
               $(document.getElementById("results-container")).append('<br>');
           };
           $(document.getElementById("all-time")).addClass("clicked");
@@ -42,7 +42,7 @@ $(document).ready(function() {
                     $(document.getElementById("results-container")).empty();
                     $(document.getElementById("results-container")).append(data[record].title);
                     $(document.getElementById("results-container")).append('<br>');
-                    $(document.getElementById("results-container")).append(data[record].total);
+                    $(document.getElementById("results-container")).append(`${data[record].total}/50`);
                     $(document.getElementById("results-container")).append('<br>');
                 }; 
             });
@@ -60,7 +60,7 @@ $(document).ready(function() {
             for (const record in data) {
                 $(document.getElementById("results-container")).append(data[record].title);
                 $(document.getElementById("results-container")).append('<br>');
-                $(document.getElementById("results-container")).append(data[record].total);
+                $(document.getElementById("results-container")).append(`${data[record].total}/50`);
                 $(document.getElementById("results-container")).append('<br>');
             };
             $(this).parent().children().removeClass("clicked");

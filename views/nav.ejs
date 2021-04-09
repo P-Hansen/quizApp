@@ -43,6 +43,9 @@
       <ul class="nav navbar-nav">
         <li><a href="http://localhost:8080/">Home</a></li>
         <li><a href="http://localhost:8080/quiz/create">Create New Quiz</a></li>
+        <% if (user_id) { %>
+        <li><a href="http://localhost:8080/results">Results</a></li>
+        <% } %>
       </ul>
       <form class="navbar-form form-inline">
         <!-- <div class="input-group search-box">
