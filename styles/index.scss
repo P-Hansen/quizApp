@@ -1,35 +1,26 @@
-// .grid-container {
-//   display: grid;
-//   grid-template-columns: 1fr 1fr 1fr 1fr;
-//   grid-template-rows: 1fr 1fr 1fr 1fr;
-//   gap: 0px 0px;
-//   grid-template-areas:
-//     "My-Quizzes My-Quizzes Public-Quizzes Public-Quizzes"
-//     "My-Quizzes My-Quizzes Public-Quizzes Public-Quizzes"
-//     "My-Quizzes My-Quizzes User-Made-Quizzes User-Made-Quizzes"
-//     "My-Quizzes My-Quizzes User-Made-Quizzes User-Made-Quizzes";
-// }
-// .My-Quizzes {
-//   grid-area: My-Quizzes;
-//   display: flex;
-//   border-color: black;
-// }
+body {
+  .main {
+    .container-fluid {
+      
+      #user-made-quizzes {
+        background-color: #90CCF4;
+ 
+      }
+    }
+  }
+  .carousel-inner {
+    display: flex;
+    width: 100%;
+  }
+}
 
-// .Public-Quizzes {
-//   grid-area: Public-Quizzes;
-//   display: flex;
-//   border-color: black;
-// }
+h2 {
+  background-color: #F3D250;
+}
 
-// .User-Made-Quizzes {
-//   grid-area: User-Made-Quizzes;
-//   display: flex;
-//   border-color: black;
-// }
-
-// * {box-sizing:border-box}
-
-.carousel-inner {
-  display: flex;
-  width: 100%;
+thead {
+  background-color: #F78888;
+}
+tbody {
+  background-color: #5DA2D5;
 }

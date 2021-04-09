@@ -18,6 +18,7 @@
   <body>
     <header>
       <%- include('./nav') %>
+      <div class="main">
       <% if (!user_id) { %>
       <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
         <ol class="carousel-indicators">
@@ -69,9 +70,6 @@
                 <p>
                   Here's a list of quizzes made by you!
                 </p>
-                <!-- <p>
-                  <a class="btn" href="#">View details »</a>
-                </p> -->
                 <table class="table" id="user-quizzes">
                   <thead>
                     <tr>
@@ -171,5 +169,6 @@
           </div>
         </div>
       </div>
+    </div>
   </body>
 </html>
