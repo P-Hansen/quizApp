@@ -10,18 +10,18 @@ INSERT INTO quizzes (public, title, category, user_id) VALUES (true, 'Valorant A
 INSERT INTO quizzes (public, title, category, user_id) VALUES (true, 'Oscar Nominations', 'Movies', 1);
 INSERT INTO quizzes (public, title, category, user_id) VALUES (true, 'Overwatch Lore', 'Video Games', 2);
 INSERT INTO quizzes (public, title, category, user_id) VALUES (false, 'Computers', 'Technology', 1);
-INSERT INTO quizzes (public, title, category, user_id) VALUES (false, 'Andy Lindsay Secret Quiz', 'Secret', 1);
+INSERT INTO quizzes (public, title, category, user_id) VALUES (true, 'Andy Lindsay Secret Quiz', 'Secret', 1);
 
-INSERT INTO quizzes (public, title, category, user_id) VALUES (true, 'Warcraft III Trivia', 'Video Games', 1);
+INSERT INTO quizzes (public, title, category, user_id) VALUES (true, 'Garys Warcraft III Trivia', 'Video Games', 1);
 INSERT INTO quizzes (public, title, category, user_id) VALUES (true, 'Greatest Hockey Teams', 'Sports', 1);
 INSERT INTO quizzes (public, title, category, user_id) VALUES (true, 'Best Football Players of All Time', 'Sports', 1);
 INSERT INTO quizzes (public, title, category, user_id) VALUES (true, 'Golfers Unite', 'Sports', 1);
-INSERT INTO quizzes (public, title, category, user_id) VALUES (true, 'Most Underrated Sports', 'Sports', 1);
+INSERT INTO quizzes (public, title, category, user_id) VALUES (true, 'Bradleys Hockey QUIZ!', 'Sports', 2);
 INSERT INTO quizzes (public, title, category, user_id) VALUES (true, 'F1 QUIZ!', 'Sports', 1);
 INSERT INTO quizzes (public, title, category, user_id) VALUES (true, 'WAR HISTORY!!!', 'History', 1);
-INSERT INTO quizzes (public, title, category, user_id) VALUES (true, 'Best Leaders', 'History', 1);
+INSERT INTO quizzes (public, title, category, user_id) VALUES (true, 'Sydanias Music History Quiz', 'Music', 1);
 INSERT INTO quizzes (public, title, category, user_id) VALUES (true, 'Greatest Movies of the 21st Century', 'Movies', 1);
-INSERT INTO quizzes (public, title, category, user_id) VALUES (true, 'Who Acted What?', 'Movies', 1);
+INSERT INTO quizzes (public, title, category, user_id) VALUES (true, 'Cats Quiz On Movies', 'Movies', 1);
 INSERT INTO quizzes (public, title, category, user_id) VALUES (true, 'Geography Travel Quiz', 'Geography', 1);
 INSERT INTO quizzes (public, title, category, user_id) VALUES (true, 'Anagrams!', 'Geography', 1);
 INSERT INTO quizzes (public, title, category, user_id) VALUES (true, 'South Korea Quiz!', 'Geography', 1);
