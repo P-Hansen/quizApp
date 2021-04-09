@@ -3,7 +3,7 @@ header {
     flex-direction: column;
 }
 body {
-    background-color: #90CCF4;
+    background-color: #00509D;
     height: 100%;
     .main-container{
         display: flex;
@@ -11,13 +11,12 @@ body {
         justify-content: space-evenly;
         height: 100%;
         text-align: center;
-        background-color: #90CCF4;
+        background-color: #00509D;
         #quizzes-done {
-            border: 3px solid black;
             width: 20%;
             height: 100%;
             p {
-                background-color: #F78888;
+                background-color: #00296B;
                 color: #ECECEC;
             }
         }
@@ -26,7 +25,8 @@ body {
             // border: 3px solid black;
             h3 {
                 margin: 0;
-                background-color: #F3D250
+                background-color: #FDC500;
+                color: black !important;
             }
             #results-container {
                 background-color:#5DA2D5;
@@ -37,7 +37,7 @@ body {
 }
 
 .clicked{
-    background-color: #F3D250 !important;
+    background-color: #FDC500 !important;
     border: 10;
-    color: black;
+    color: black !important;
 }
