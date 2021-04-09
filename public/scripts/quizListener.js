@@ -3,15 +3,21 @@
 $(document).ready(function() {
   $(document.getElementById("questions-box")).hide();
   const quizID = window.location.pathname.slice(7);
+  console.log("is this a string somehow?", quizID);
   let currentQuestion = -1;
   let questionTime = 5;
   let totalPoints = 0;
   let answer = null;
+  let attemptNumber = 0;
   $.ajax({
     method:'POST',
     url: `/results`,
     data: {quizID}
   })
+  .then((data)=>{
+    console.log("This is the number of the attempt", data.rows[0].id);
+    attemptNumber = data.rows[0].id;
+  });
 
   const questionTimer = (quiz) => {
     questionTime -= 1;
@@ -34,7 +40,7 @@ $(document).ready(function() {
         $.ajax({
           method:'POST',
           url: `/results/${quizID}`,
-          data: {totalPoints}
+          data: {totalPoints, attemptNumber}
         });
       };
       //reset timer and increment question
@@ -42,7 +48,19 @@ $(document).ready(function() {
       currentQuestion++;
       //check if quiz is done, if true go to results page
       if ((currentQuestion) === quiz.length) {
-        window.location.replace(`/results/`);
+        // one last score update before results page
+        $.ajax({
+          method:'POST',
+          url: `/results/${quizID}`,
+          data: {totalPoints, attemptNumber}
+        })
+        .then(()=>{
+          console.log("go! be free!");
+          window.location.href = `/results/${attemptNumber}`;
+        })
+
+        // window.location.href = `/results/${attemptNumber}`;
+        //window.location.replace(`/results/${attemptNumber}`);
       } else {
         document.getElementById("quiz-length-bar-label").innerText = `${currentQuestion+1}/${quiz.length}`;
         $(document.getElementById("quiz-length-bar")).val(currentQuestion+1);

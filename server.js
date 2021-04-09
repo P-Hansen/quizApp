@@ -38,32 +38,13 @@ app.use(cookieSession({
   maxAge: 24 * 60 * 60 * 1000 // 24 hours
 }));
 
-// Separated Routes for each Resource
-// Note: Feel free to replace the example routes below with your own
-// const usersRoutes = require("./routes/users");
-// const widgetsRoutes = require("./routes/widgets");
-
-// Mount all resource routes
-// Note: Feel free to replace the example routes below with your own
-// app.use("/api/users", usersRoutes(db));
-// app.use("/api/widgets", widgetsRoutes(db));
-
+//our routes
 app.use('/quiz', quizRouter);
 app.use('/login', userRouter);
 app.use('/results', resultsRouter);
 app.use('/quizzes', quizAPI);
 
-
-// Home page
-// Warning: avoid creating more routes in this file!
-// Separate them into separate routes files (see above).
-
-// const getUserById = (id) => {
-//   return db.query(`SELECT * FROM users WHERE id = $1;`, [id])
-//     .then(data => data.rows[0])
-//     .catch(err => err.message);
-// };
-
+//homepage
 app.get("/", (req, res) => {
   const templateVars = {user_id: req.session.user_id, name: req.session.name}
   res.render("index", templateVars)
