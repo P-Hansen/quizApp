@@ -14,9 +14,10 @@ body {
   }
 }
 
-// h2 {
-//   background-color: #00296B;
-// }
+.carousel-caption d-none d-md-block {
+  display: flex;
+  font-size: 4vmin;
+}
 
 thead {
   background-color: #FDC500;

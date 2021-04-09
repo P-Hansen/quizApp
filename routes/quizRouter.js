@@ -73,7 +73,7 @@ router.post('/create', (req, res) => {
   INSERT INTO quizzes (public, title, category, user_id)
   VALUES ($1, $2, $3, $4)
   RETURNING id;
-  `, [req.body.public, req.body.title, 'user_created', 1]) //quiz created
+  `, [req.body.public, req.body.title, req.body.category, 1]) //quiz created
   .then((qqq) => {
     quizID = qqq;
     return quizID; //global quiz id varirable created
