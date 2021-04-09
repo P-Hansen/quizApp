@@ -1,6 +1,7 @@
 body {
-  font-family: 'Varela Round', sans-serif;
-  // font-family: 'Playfair Display', sans-serif;
+  // font-family: 'Varela Round', sans-serif;
+  font-family: 'Rubik', sans-serif;
+  background-color: #90CCF4;
 }
 .form-control {
   box-shadow: none;
@@ -13,7 +14,7 @@ body {
 }
 
 .navbar {
-  background: #fff;
+  background: #303C6C;
   padding-left: 16px;
   padding-right: 16px;
   // border-bottom: 1px solid #dfe3e8;
@@ -37,7 +38,7 @@ body {
 }
 .navbar .navbar-brand b {
   font-weight: bold;
-  color: #33cabb;
+  color: #f3cd50;
 }
 .navbar .form-inline {
       display: inline-block;
@@ -72,7 +73,7 @@ body {
   font-size: 19px;
   }
 .navbar .nav .btn-primary, .navbar .nav .btn-primary:active {
-  color: #fff;
+  color: #303C6C;
   background: #33cabb;
   padding-top: 8px;
   // padding-bottom: 6px;
@@ -80,7 +81,7 @@ body {
   border: none;
 }
 .navbar .nav .btn-primary:hover, .navbar .nav .btn-primary:focus {
-  color: #fff;
+  color: #303C6C;
   outline: none;
   background: #31bfb1;
 }
@@ -99,16 +100,16 @@ body {
 }
 .navbar .nav .get-started-btn {
   min-width: 120px;
-  margin-top: 8px;
-  // margin-bottom: 8px;
+  max-height: 40px;
+  margin-top: 5px; //changes margin for sign up button in nav
 }
 .navbar ul.nav li.open > a.get-started-btn {
-  color: #fff;
+  color: #303C6C;
   background: #31bfb1 !important;
 }
 .navbar .dropdown-menu {
   border-radius: 1px;
-  border-color: #e5e5e5;
+  border-color: #303C6C;
   box-shadow: 0 2px 8px rgba(0,0,0,.05);
 }
 .navbar .nav .dropdown-menu li {
@@ -168,7 +169,7 @@ body {
   line-height: 26px;
   background: #fff;
   display: inline-block;
-  border: 1px solid #e0e0e0;
+  border: 1px solid #303C6C;
   border-radius: 50%;
   position: relative;
   top: -15px;
