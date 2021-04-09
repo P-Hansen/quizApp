@@ -12,7 +12,7 @@ INSERT INTO quizzes (public, title, category, user_id) VALUES (true, 'Overwatch 
 INSERT INTO quizzes (public, title, category, user_id) VALUES (false, 'Computers', 'Technology', 1);
 INSERT INTO quizzes (public, title, category, user_id) VALUES (false, 'Building a Gaming PC', 'Technology', 1);
 
-INSERT INTO quizzes (public, title, category, user_id) VALUES (true, 'Warcraft III Trivia', 'Video Game', 1);
+INSERT INTO quizzes (public, title, category, user_id) VALUES (true, 'Warcraft III Trivia', 'Video Games', 1);
 INSERT INTO quizzes (public, title, category, user_id) VALUES (true, 'Greatest Hockey Teams', 'Sports', 1);
 INSERT INTO quizzes (public, title, category, user_id) VALUES (true, 'Best Football Players of All Time', 'Sports', 1);
 INSERT INTO quizzes (public, title, category, user_id) VALUES (true, 'Golfers Unite', 'Sports', 1);
