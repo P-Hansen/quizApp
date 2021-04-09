@@ -4,7 +4,7 @@ Created by Philip Hansen ([**@P-Hansen**](https://github.com/P-Hansen)) & Caden 
 
 Full-Stack application to take, create, and share quizzes! <br>
 Created as a part of Lighthouse Labs Web Development Bootcamp midterm requirements. <br>
-This website is built using Node.js, Express, PostgreSQL, jQuery, CSS/SASS, Ajax, and Bootstrap 3
+This website is built using Node.js, Express, PostgreSQL, jQuery, CSS/SASS, Ajax, and Bootstrap 3.
 
 
 
@@ -51,7 +51,7 @@ npm run local
 
 
 ## Screenshots
-!["Screenshot of "]()
-!["Screenshot of "]()
 !["GIF of Home/Login"](https://github.com/P-Hansen/quizApp/blob/master/planning/screenShots/login.gif?raw=true)
+!["Screenshot of Create Quiz Page"](https://github.com/P-Hansen/quizApp/blob/master/planning/screenShots/createQuiz.png?raw=true)
 !["GIF of Taking a Quiz"](https://github.com/P-Hansen/quizApp/blob/master/planning/screenShots/takeQuiz.gif?raw=true)
+!["Screenshot of Results Page"](https://github.com/P-Hansen/quizApp/blob/master/planning/screenShots/results.png?raw=true)
