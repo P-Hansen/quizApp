@@ -2,11 +2,11 @@
 
 Created by Philip Hansen ([**@P-Hansen**](https://github.com/P-Hansen)) & Caden Choi ([**@cadenkchoi**](https://github.com/cadenkchoi))
 
-Full-Stack application to take, create, and share quizzes!
-Created as a part of Lighthouse Labs Web Development Bootcamp midterm requirements.
+Full-Stack application to take, create, and share quizzes! <br>
+Created as a part of Lighthouse Labs Web Development Bootcamp midterm requirements. <br>
 This website is built using Node.js, Express, PostgreSQL, jQuery, CSS/SASS, Ajax, and Bootstrap 3
 
-=========
+
 
 ## Project Setup/ Getting Started
 
@@ -31,6 +31,7 @@ npm run local
 ```
 5. Visit `http://localhost:8080/`
 
+
 ## Dependencies
 
 - Node 10.x or above
@@ -48,4 +49,9 @@ npm run local
 - Node-sass-middleware 0.x or above
 - Nodemon 1.x or above
 
+
 ## Screenshots
+!["Screenshot of "]()
+!["Screenshot of "]()
+!["GIF of Home/Login"](https://github.com/P-Hansen/quizApp/blob/master/planning/screenShots/login.gif?raw=true)
+!["GIF of Taking a Quiz"](https://github.com/P-Hansen/quizApp/blob/master/planning/screenShots/takeQuiz.gif?raw=true)
