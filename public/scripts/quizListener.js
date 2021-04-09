@@ -9,6 +9,22 @@ $(document).ready(function() {
   let totalPoints = 0;
   let answer = null;
   let attemptNumber = 0;
+
+    //https://css-tricks.com/snippets/jquery/shuffle-children/
+    $.fn.shuffleChildren = function() {
+      $.each(this.get(), function(index, el) {
+        var $el = $(el);
+        var $find = $el.children();
+    
+        $find.sort(function() {
+          return 0.5 - Math.random();
+        });
+    
+        $el.empty();
+        $find.appendTo($el);
+      });
+    };
+
   $.ajax({
     method:'POST',
     url: `/results`,
@@ -68,11 +84,13 @@ $(document).ready(function() {
         document.getElementById("quiz-length-bar").max = quiz.length;
         console.log("how long is this>",quiz.length);
         //change question and answers
-        document.getElementById("question").innerHTML = quiz[currentQuestion].question; 
+        document.getElementById("question").innerHTML = quiz[currentQuestion].question;
+        $(document.getElementById("answer-buttons")).shuffleChildren();
         document.getElementById("a").innerHTML = quiz[currentQuestion].correct_answer;
         document.getElementById("b").innerHTML = quiz[currentQuestion].incorrect_answers[0];
         document.getElementById("c").innerHTML = quiz[currentQuestion].incorrect_answers[1];
         document.getElementById("d").innerHTML = quiz[currentQuestion].incorrect_answers[2];
+        
       }
     }
   };
