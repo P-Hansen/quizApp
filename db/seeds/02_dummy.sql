@@ -1,29 +1,47 @@
-INSERT INTO users (name, password, email) VALUES ('Alice', 'password', 'alice@hotmale.com');
+INSERT INTO users (name, password, email) VALUES ('Caden', 'password', 'caden@choi.ca');
 INSERT INTO users (name, password, email) VALUES ('Kira', 'password', 'kira@hotmale.com');
 INSERT INTO users (name, password, email) VALUES ('Terry', 'password', 'terry@hotmale.com');
 
-INSERT INTO quizzes (public, title, category, user_id) VALUES (true, 'Movies', 'movies', 1);
-INSERT INTO quizzes (public, title, category, user_id) VALUES (true, 'Video Games', 'video game', 2);
+INSERT INTO quizzes (public, title, category, user_id) VALUES (true, 'Lighthouse Labs Quiz', 'Miscellaneous', 1);
+INSERT INTO quizzes (public, title, category, user_id) VALUES (true, 'Supreme Video Game Quiz', 'Video Games', 2);
 -- delete these quizzes afterwards, only for making my quizzes table
-INSERT INTO quizzes (public, title, category, user_id) VALUES (true, 'Mario Adventure', 'video game', 1);
-INSERT INTO quizzes (public, title, category, user_id) VALUES (true, 'Valorant Agents', 'video game', 2);
-INSERT INTO quizzes (public, title, category, user_id) VALUES (true, 'Oscar Nominations', 'movies', 1);
-INSERT INTO quizzes (public, title, category, user_id) VALUES (true, 'Overwatch Lore', 'video game', 2);
-INSERT INTO quizzes (public, title, category, user_id) VALUES (false, 'Lighthouse Labs', 'Technology', 1);
+INSERT INTO quizzes (public, title, category, user_id) VALUES (true, 'Mario Adventure', 'Video Games', 1);
+INSERT INTO quizzes (public, title, category, user_id) VALUES (true, 'Valorant Agents', 'Video Games', 2);
+INSERT INTO quizzes (public, title, category, user_id) VALUES (true, 'Oscar Nominations', 'Movies', 1);
+INSERT INTO quizzes (public, title, category, user_id) VALUES (true, 'Overwatch Lore', 'Video Games', 2);
+INSERT INTO quizzes (public, title, category, user_id) VALUES (false, 'Computers', 'Technology', 1);
 INSERT INTO quizzes (public, title, category, user_id) VALUES (false, 'Building a Gaming PC', 'Technology', 1);
 
+INSERT INTO quizzes (public, title, category, user_id) VALUES (true, 'Warcraft III Trivia', 'Video game', 1);
+INSERT INTO quizzes (public, title, category, user_id) VALUES (true, 'Greatest Hockey Teams', 'Sports', 1);
+INSERT INTO quizzes (public, title, category, user_id) VALUES (true, 'Best Football Players of All Time', 'Sports', 1);
+INSERT INTO quizzes (public, title, category, user_id) VALUES (true, 'Golfers Unite', 'Sports', 1);
+INSERT INTO quizzes (public, title, category, user_id) VALUES (true, 'Most Underrated Sports', 'Sports', 1);
+INSERT INTO quizzes (public, title, category, user_id) VALUES (true, 'F1 QUIZ!', 'Sports', 1);
+INSERT INTO quizzes (public, title, category, user_id) VALUES (true, 'WAR HISTORY!!!', 'History', 1);
+INSERT INTO quizzes (public, title, category, user_id) VALUES (true, 'Best Leaders', 'History', 1);
+INSERT INTO quizzes (public, title, category, user_id) VALUES (true, 'Greatest Movies of the 21st Century', 'Movies', 1);
+INSERT INTO quizzes (public, title, category, user_id) VALUES (true, 'Who Acted What?', 'Movies', 1);
+INSERT INTO quizzes (public, title, category, user_id) VALUES (true, 'Geography Travel Quiz', 'Geography', 1);
+INSERT INTO quizzes (public, title, category, user_id) VALUES (true, 'Anagrams!', 'Geography', 1);
+INSERT INTO quizzes (public, title, category, user_id) VALUES (true, 'South Korea Quiz!', 'Geography', 1);
+INSERT INTO quizzes (public, title, category, user_id) VALUES (true, 'Greatest Action Movies!', 'Movies', 1);
+INSERT INTO quizzes (public, title, category, user_id) VALUES (true, 'DO YOU KNOW ROCK?', 'Music', 1);
 
-INSERT INTO questions (question, quiz_id) VALUES ('who played neo in the matrix?', 1);
-INSERT INTO questions (question, quiz_id) VALUES ('what was the highest gossing movie of 2020?', 1);
-INSERT INTO answers (correct_answer, incorrect_answers, question_id) VALUES ('keanu reeves', ARRAY ['laurence fishburne','matt damon','jet li'], 1);
-INSERT INTO answers (correct_answer, incorrect_answers, question_id) VALUES ('Bad Boys For Life', ARRAY ['Sonic The Hedgehog','Bill & Ted Face the Music','titanic'], 2);
 
-INSERT INTO questions (question, quiz_id) VALUES ('The most graphically violent game to precede the creation of the ESRB (Entertainment Software Rating Board) was...', 2);
-INSERT INTO questions (question, quiz_id) VALUES ('What is the worlds first video game console?', 2);
-INSERT INTO questions (question, quiz_id) VALUES ('Which of the following is a class in the game Hearthstone?', 2);
-INSERT INTO answers (correct_answer, incorrect_answers, question_id) VALUES ('Mortal Kombat', ARRAY ['Duke Nukem','Resident Evil','Doom'], 3);
-INSERT INTO answers (correct_answer, incorrect_answers, question_id) VALUES ('Magnavox Odyssey', ARRAY ['Coleco Telstar','Nintendo Color TV Game','Atari 2600'], 4);
-INSERT INTO answers (correct_answer, incorrect_answers, question_id) VALUES ('Priest', ARRAY ['Sage','Cleric','Monk'], 5);
+-- Questions for LHL quiz!
+INSERT INTO questions (question, quiz_id) VALUES ('Which Program Are We In?', 1);
+INSERT INTO questions (question, quiz_id) VALUES ('Which Cohort Are We?', 1);
+INSERT INTO questions (question, quiz_id) VALUES ('Who Named Our Cohort "Cookie Monsters?"', 1);
+INSERT INTO questions (question, quiz_id) VALUES ('Which Island Does Nally Live On?', 1);
+INSERT INTO questions (question, quiz_id) VALUES ('Which Person SQL Injected Themself on Stream?', 1);
+
+
+INSERT INTO answers (correct_answer, incorrect_answers, question_id) VALUES ('Web Development', ARRAY ['Data Science','Gaming','Wrestling'], 1);
+INSERT INTO answers (correct_answer, incorrect_answers, question_id) VALUES ('March 1st', ARRAY ['March 29th','January 1st','February 1st'], 2);
+INSERT INTO answers (correct_answer, incorrect_answers, question_id) VALUES ('Nally', ARRAY ['Andy','Cat','Khurram'], 3);
+INSERT INTO answers (correct_answer, incorrect_answers, question_id) VALUES ('Galiano Island', ARRAY ['Denman Island','Salt Spring Island','Vancouver Island'], 4);
+INSERT INTO answers (correct_answer, incorrect_answers, question_id) VALUES ('NALLY!?', ARRAY ['ANDY!?','GARRY!?','SYDANIA!?'], 5);
 
 INSERT INTO quiz_attempts (user_id, quiz_id) VALUES (1,1);
 INSERT INTO quiz_attempts (user_id, quiz_id) VALUES (1,2);
