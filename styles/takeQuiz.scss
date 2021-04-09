@@ -1,4 +1,5 @@
 body {
+    font-family: 'Rubik', sans-serif;
     height: 100%;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -27,7 +28,7 @@ body {
             background-color: #5DA2D5;
             button {
                 display: flex;
-                background-color: #F78888;
+                background-color: #303C6C;
                 color: #ECECEC;
                 text-align: center;
                 align-content: center;
@@ -39,13 +40,13 @@ body {
                 border-radius: 12px;
             }
         }
-        
-        
+
+
     }
 }
 
 .clicked{
-    background-color: #F3D250 !important;
+    background-color: #FDC500!important;
     border: 10;
     border-color: floralwhite;
 }
