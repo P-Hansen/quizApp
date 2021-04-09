@@ -30,3 +30,12 @@ front end: HTML, CSS, JS, jQuery, flexbox, CSS grid, SCSS
 
 
 npm run db:reset
+
+https://visme.co/blog/website-color-schemes/
+
+style 39
+#F78888
+#F3D250
+#ECECEC
+#90CCF4
+#5DA2D5

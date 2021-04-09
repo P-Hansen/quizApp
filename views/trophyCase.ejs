@@ -16,8 +16,8 @@
 <header>
   <%- include('./nav') %>
 </header>
-<br>
 <body>
+  <br>
   <div class="main-container">
     <form id="quizzes-done">
       <p id="all-time">ALL Time</p>
@@ -26,7 +26,7 @@
       <p class="quizzes-completed">Quiz 3</p> -->
     </form>
     <div id="results-box">
-      <h5>RESULTS</h5>
+      <h3>RESULTS</h3>
       <div id="results-container">
         <% if (locals.results) { %>
           <p id="flag"><%=locals.results.title%></p>

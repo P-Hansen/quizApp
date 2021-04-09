@@ -3,35 +3,41 @@ header {
     flex-direction: column;
 }
 body {
+    background-color: #90CCF4;
+    height: 100%;
     .main-container{
         display: flex;
         flex-direction: row;
         justify-content: space-evenly;
-        height: 800px;
+        height: 100%;
         text-align: center;
+        background-color: #90CCF4;
         #quizzes-done {
             border: 3px solid black;
             width: 20%;
+            height: 100%;
             p {
-                background-color: cornflowerblue;
-                color: cornsilk;
+                background-color: #F78888;
+                color: #ECECEC;
             }
         }
         #results-box {
             width: 50%;
-            border: 3px solid black;
-            h5 {
-                color: crimson;
+            // border: 3px solid black;
+            h3 {
+                margin: 0;
+                background-color: #F3D250
             }
             #results-container {
-                height: 800px;
+                background-color:#5DA2D5;
+                height: 100%;
             }
         }
     }
 }
 
 .clicked{
-    background-color: rgb(224, 173, 64) !important;
+    background-color: #F3D250 !important;
     border: 10;
-    border-color: floralwhite;
+    color: black;
 }
