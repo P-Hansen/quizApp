@@ -10,20 +10,20 @@ $(document).ready(function() {
   let answer = null;
   let attemptNumber = 0;
 
-    //https://css-tricks.com/snippets/jquery/shuffle-children/
-    $.fn.shuffleChildren = function() {
-      $.each(this.get(), function(index, el) {
-        var $el = $(el);
-        var $find = $el.children();
-    
-        $find.sort(function() {
-          return 0.5 - Math.random();
-        });
-    
-        $el.empty();
-        $find.appendTo($el);
+  //https://css-tricks.com/snippets/jquery/shuffle-children/
+  $.fn.shuffleChildren = function() {
+    $.each(this.get(), function(index, el) {
+      var $el = $(el);
+      var $find = $el.children();
+  
+      $find.sort(function() {
+        return 0.5 - Math.random();
       });
-    };
+  
+      $el.empty();
+      $find.appendTo($el);
+    });
+  };
 
   $.ajax({
     method:'POST',
@@ -90,7 +90,12 @@ $(document).ready(function() {
         document.getElementById("b").innerHTML = quiz[currentQuestion].incorrect_answers[0];
         document.getElementById("c").innerHTML = quiz[currentQuestion].incorrect_answers[1];
         document.getElementById("d").innerHTML = quiz[currentQuestion].incorrect_answers[2];
-        
+        //adds a class to the selected answer
+        $("button").on("click", function(event) {
+          event.preventDefault();
+          $(this).parent().children().removeClass("clicked");
+          $(this).addClass("clicked");
+      });
       }
     }
   };
@@ -110,11 +115,11 @@ $(document).ready(function() {
   };
   getQuiz(quizID);
 
-  //adds a class to the selected answer
-  $("button").on("click", function(event) {
-      event.preventDefault();
-      $(this).parent().children().removeClass("clicked");
-      $(this).addClass("clicked");
-  });
+  // //adds a class to the selected answer
+  // $("button").on("click", function(event) {
+  //     event.preventDefault();
+  //     $(this).parent().children().removeClass("clicked");
+  //     $(this).addClass("clicked");
+  // });
 
 });
