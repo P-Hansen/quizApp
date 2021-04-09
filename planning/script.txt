@@ -1,0 +1,44 @@
+1-I've got a problem Phil, my friends are huge nerds but how do we decide
+1-who is our king?
+
+	2-Don't worry Caden introducing QuiZapp the Quiz app!
+	2-Movies, sports, history, games, it has it all
+
+1-how do I start?
+
+	2-just go to local host 8080 and let's go!
+	here's the homepage with all the exciting quizzes you can take
+
+1-but what if I want to create my own quizzes?
+
+	2-just log in at the top and let's get started!
+
+	2-once you log in you can see all the quizzes you've made
+	2-down here are all the quizzes you've made private
+	2-and up here are all the quizzes you've shared with the world
+
+1-what's that one down there? is that a Lighthouse labs quiz?
+
+	2-let's check it out!
+	2-ok everone open you're mics so you can shout out the answers and let's see how we do
+
+1-I guess after 6 weeks we know a lot about Lighthouse labs
+
+	2-you can even share your score with the link at the top
+
+1-that was fun but I want to create my own quiz
+
+	2-sure thing just click create quiz at the top
+	2-what catagorie should our quiz be?
+	2-**get answers from audience**
+
+1-** get answers from audience**
+
+--click create quiz--
+
+1-there it is!
+
+	2-just click share to send a link to your friends
+
+
+
