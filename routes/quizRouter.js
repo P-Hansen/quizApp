@@ -2,6 +2,19 @@ const express = require('express');
 const router = express.Router();
 const db = require('../db/dbConnection.js');
 
+//GET to href link quiz ID to the actual start of quiz
+router.get(`/all/public/:id`, (req, res) => {
+  db.query(`
+  SELECT *
+  FROM quizzes
+  JOIN questions ON quiz_id = quizzes.id
+  WHERE quizzes.id = $1
+  `, [req.params.id])
+  .then((data) => {
+    console.log("ID HREF", data.rows)
+    res.render("takeQuiz", {data: data.rows})
+  })
+})
 
 //GET all quizzes made by user that are PRIVATE
 router.get('/all/user/private', (req, res) => {
@@ -13,7 +26,7 @@ router.get('/all/user/private', (req, res) => {
     `)
     .then((data) => {
       console.log("User Private Quizzes", data.rows);
-      res.send(data.rows);
+      res.send({ data: data.rows, user_id: req.session.user_id });
     })
 })
 
@@ -27,7 +40,7 @@ router.get('/all/user', (req, res) => {
     `)
     .then((data) => {
       console.log("User Quizzes", data.rows);
-      res.send(data.rows);
+      res.send({ data: data.rows, user_id: req.session.user_id });
     })
 });
 

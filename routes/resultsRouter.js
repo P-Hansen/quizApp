@@ -37,6 +37,7 @@ router.get('/all', (req, res) => {
 
 //GET /results/:id READ
 router.get('/:id', (req, res) => {
+  console.log("insomnia test", req.params)
     db.query(`SELECT quizzes.title, quiz_attempt_results.total
     FROM quizzes
     JOIN quiz_attempts ON quiz_attempts.quiz_id = quizzes.id

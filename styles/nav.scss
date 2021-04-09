@@ -1,5 +1,6 @@
 body {
   font-family: 'Varela Round', sans-serif;
+  // font-family: 'Playfair Display', sans-serif;
 }
 .form-control {
   box-shadow: none;
@@ -15,7 +16,8 @@ body {
   background: #fff;
   padding-left: 16px;
   padding-right: 16px;
-  border-bottom: 1px solid #dfe3e8;
+  // border-bottom: 1px solid #dfe3e8;
+  margin-bottom: 0; // NEED THIS TO GET RID OF BOTTOM MARGIN BETWEEN CAROUSEL AND NAVBAR
   border-radius: 0;
 }
 
@@ -23,7 +25,7 @@ body {
   border-radius: 50%;
   width: 36px;
   height: 36px;
-  margin: -8px 0;
+  // margin: -8px 0;
   float: right;
   margin-right: 10px;
 }
@@ -73,7 +75,7 @@ body {
   color: #fff;
   background: #33cabb;
   padding-top: 8px;
-  padding-bottom: 6px;
+  // padding-bottom: 6px;
   vertical-align: middle;
   border: none;
 }
@@ -98,7 +100,7 @@ body {
 .navbar .nav .get-started-btn {
   min-width: 120px;
   margin-top: 8px;
-  margin-bottom: 8px;
+  // margin-bottom: 8px;
 }
 .navbar ul.nav li.open > a.get-started-btn {
   color: #fff;
@@ -114,7 +116,7 @@ body {
   font-weight: normal;
 }
 .navbar .nav .dropdown-menu li a, .navbar .nav .dropdown-menu li a:hover, .navbar .nav .dropdown-menu li a:focus {
-  padding: 8px 20px;
+  // padding: 8px 20px;
   line-height: normal;
 }
 .navbar .navbar-form {
@@ -136,39 +138,10 @@ body {
 }
 .navbar .form-wrapper .hint-text {
   text-align: center;
-  margin-bottom: 15px;
+  // margin-bottom: 15px;
   font-size: 13px;
 }
-// .navbar .form-wrapper .social-btn .btn, .navbar .form-wrapper .social-btn .btn:hover {
-//   color: #fff;
-//       margin: 0;
-//   padding: 0 !important;
-//   font-size: 13px;
-//   border: none;
-//   transition: all 0.4s;
-//   text-align: center;
-//   line-height: 34px;
-//   width: 47%;
-//   text-decoration: none;
-//   }
-// .navbar .social-btn .btn-primary {
-//   background: #507cc0;
-// }
-// .navbar .social-btn .btn-primary:hover {
-//   background: #4676bd;
-// }
-// .navbar .social-btn .btn-info {
-//   background: #64ccf1;
-// }
-// .navbar .social-btn .btn-info:hover {
-//   background: #4ec7ef;
-// }
-// .navbar .social-btn .btn i {
-//   margin-right: 5px;
-//   font-size: 16px;
-//   position: relative;
-//   top: 2px;
-// }
+
 .navbar .form-wrapper .form-footer {
   text-align: center;
   padding-top: 10px;
@@ -231,59 +204,4 @@ body {
   }
 }
 
-
-// nav {
-//   display: flex;
-//   justify-content: space-between;
-//   height: 100px;
-//   width: 100%;
-//   background: #9dffd3;
-// }
-
-// .nav-container {
-//   display: flex;
-//   width: 100%;
-//   align-items: flex-start;
-//   // justify-content: space-between;
-// }
-
-// .menu {
-//   display: flex;
-//   width: 100%;
-// }
-
-// .menu-content {
-//   display: flex;
-//   width: 100%;
-//   margin-top: 2.6%;
-//   letter-spacing: 0.02em;
-//   justify-content: flex-end;
-//   font-family: 'Playfair Display', sans-serif;
-//   font-size: larger;
-//   font-weight: bold;
-// }
-
-// .arrow-up {
-//   position: absolute;
-//   margin-top: 1.4%;
-//   margin-right: 4.7%;
-//   width: 0;
-//   height: 0;
-//   border-left: 20px solid transparent;
-//   border-right: 20px solid transparent;
-//   border-bottom: 20px solid pink;
-// }
-
-// .login-form { //16:07
-//   display: flex;
-//   justify-content: space-around;
-//   border-radius: 2px;
-//   border-bottom: 5px solid gray;
-//   background: white;
-//   height: auto;
-//   right: 0;
-//   width: 275px;
-//   height: 120px;
-
-// }
 

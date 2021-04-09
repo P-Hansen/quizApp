@@ -19,6 +19,11 @@ router.post('/login', (req, res) => {
   window.location.replace("/index")
 });
 
+router.post('/logout', (req, res) => {
+  req.session = null;
+  res.redirect('/');
+});
+
 const getUserByEmail = (email) => {
   return db.query(`SELECT * FROM users WHERE email = $1;`, [email])
     .then(data => data.rows[0])
@@ -41,5 +46,6 @@ router.post('/', (req, res) => {
       res.redirect('/');
     })
 })
+
 
 module.exports = router;
